@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 
-namespace JudoArena.bd;
+namespace JudoArena.DB;
 
 public partial class JudoContext : DbContext
 {
@@ -22,6 +22,8 @@ public partial class JudoContext : DbContext
     public virtual DbSet<Competition> Competitions { get; set; }
 
     public virtual DbSet<Judge> Judges { get; set; }
+
+    public virtual DbSet<Login> Logins { get; set; }
 
     public virtual DbSet<Meet> Meets { get; set; }
 
@@ -119,27 +121,48 @@ public partial class JudoContext : DbContext
 
             entity.ToTable("judges");
 
+            entity.HasIndex(e => e.LoginJudges, "FK_id_login_judges_idx");
+
             entity.Property(e => e.Id)
                 .ValueGeneratedNever()
                 .HasColumnName("id");
             entity.Property(e => e.Category)
                 .HasMaxLength(45)
                 .HasColumnName("category");
-            entity.Property(e => e.Login)
-                .HasMaxLength(45)
-                .HasColumnName("login");
+            entity.Property(e => e.LoginJudges).HasColumnName("login_judges");
             entity.Property(e => e.Name)
                 .HasMaxLength(45)
                 .HasColumnName("name");
-            entity.Property(e => e.Password)
-                .HasMaxLength(45)
-                .HasColumnName("password");
             entity.Property(e => e.Patronymic)
                 .HasMaxLength(45)
                 .HasColumnName("patronymic");
             entity.Property(e => e.Surname)
                 .HasMaxLength(45)
                 .HasColumnName("surname");
+
+            entity.HasOne(d => d.LoginJudgesNavigation).WithMany(p => p.Judges)
+                .HasForeignKey(d => d.LoginJudges)
+                .HasConstraintName("FK_id_login_judges");
+        });
+
+        modelBuilder.Entity<Login>(entity =>
+        {
+            entity.HasKey(e => e.Id).HasName("PRIMARY");
+
+            entity.ToTable("login");
+
+            entity.Property(e => e.Id)
+                .ValueGeneratedNever()
+                .HasColumnName("id");
+            entity.Property(e => e.Loggin)
+                .HasMaxLength(45)
+                .HasColumnName("loggin");
+            entity.Property(e => e.Password)
+                .HasMaxLength(45)
+                .HasColumnName("password");
+            entity.Property(e => e.Role)
+                .HasComment("0 - участник\\\\n1 - тренер \\\\n2 - судья")
+                .HasColumnName("role");
         });
 
         modelBuilder.Entity<Meet>(entity =>
@@ -194,20 +217,17 @@ public partial class JudoContext : DbContext
 
             entity.ToTable("participants");
 
+            entity.HasIndex(e => e.LoginParticipant, "FK_id_login_participant_idx");
+
             entity.Property(e => e.Id)
                 .ValueGeneratedNever()
                 .HasColumnName("id");
             entity.Property(e => e.DateBirth).HasColumnName("date_birth");
             entity.Property(e => e.HealthInsuranceNumber).HasColumnName("health_insurance_number");
-            entity.Property(e => e.Login)
-                .HasMaxLength(45)
-                .HasColumnName("login");
+            entity.Property(e => e.LoginParticipant).HasColumnName("login_participant");
             entity.Property(e => e.Name)
                 .HasMaxLength(45)
                 .HasColumnName("name");
-            entity.Property(e => e.Password)
-                .HasMaxLength(45)
-                .HasColumnName("password");
             entity.Property(e => e.Patronymic)
                 .HasMaxLength(45)
                 .HasColumnName("patronymic");
@@ -217,6 +237,10 @@ public partial class JudoContext : DbContext
             entity.Property(e => e.Weight)
                 .HasPrecision(3)
                 .HasColumnName("weight");
+
+            entity.HasOne(d => d.LoginParticipantNavigation).WithMany(p => p.Participants)
+                .HasForeignKey(d => d.LoginParticipant)
+                .HasConstraintName("FK_id_login_participant");
         });
 
         modelBuilder.Entity<ParticipantCategory>(entity =>
@@ -258,25 +282,26 @@ public partial class JudoContext : DbContext
 
             entity.ToTable("trainer");
 
+            entity.HasIndex(e => e.LoginTrainer, "FK_id_login_trainer_idx");
+
             entity.Property(e => e.Id)
                 .ValueGeneratedNever()
                 .HasColumnName("id");
             entity.Property(e => e.LicenseNumber).HasColumnName("license_number");
-            entity.Property(e => e.Login)
-                .HasMaxLength(45)
-                .HasColumnName("login");
+            entity.Property(e => e.LoginTrainer).HasColumnName("login_trainer");
             entity.Property(e => e.Name)
                 .HasMaxLength(45)
                 .HasColumnName("name");
-            entity.Property(e => e.Password)
-                .HasMaxLength(45)
-                .HasColumnName("password");
             entity.Property(e => e.Patronymic)
                 .HasMaxLength(45)
                 .HasColumnName("patronymic");
             entity.Property(e => e.Surname)
                 .HasMaxLength(45)
                 .HasColumnName("surname");
+
+            entity.HasOne(d => d.LoginTrainerNavigation).WithMany(p => p.Trainers)
+                .HasForeignKey(d => d.LoginTrainer)
+                .HasConstraintName("FK_id_login_trainer");
         });
 
         modelBuilder.Entity<Weight>(entity =>

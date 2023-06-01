@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\nudan\source\repos\JudoArena\JudoArena\obj\Debug\net7.0-windows\
+C:\Users\nudan\source\repos\NuDaVot\JudoArena\JudoArena\obj\Debug\net7.0-windows\
 JudoArena
 none
 false
 TRACE;DEBUG;NET;NET7_0;NETCOREAPP
-C:\Users\nudan\source\repos\JudoArena\JudoArena\App.xaml
-11407045341
+C:\Users\nudan\source\repos\NuDaVot\JudoArena\JudoArena\App.xaml
+4-868133784
 
-3-1233169557
-2121379652731
-MainWindow.xaml;
+2041163966
+214-30752451
+Utilit\DataTemplate.xaml;View\MainWindow.xaml;View\SignInPage.xaml;View\SignUpPage.xaml;
 
 False
 

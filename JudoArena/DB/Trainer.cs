@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace JudoArena.bd;
+namespace JudoArena.DB;
 
 public partial class Trainer
 {
@@ -15,9 +15,9 @@ public partial class Trainer
 
     public int? LicenseNumber { get; set; }
 
-    public string? Login { get; set; }
+    public int? LoginTrainer { get; set; }
 
-    public string? Password { get; set; }
+    public virtual Login? LoginTrainerNavigation { get; set; }
 
     public virtual ICollection<ParticipantCategory> ParticipantCategories { get; set; } = new List<ParticipantCategory>();
 }

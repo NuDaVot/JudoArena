@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace JudoArena.bd;
+namespace JudoArena.DB;
 
 public partial class Judge
 {
@@ -15,11 +15,11 @@ public partial class Judge
 
     public string? Category { get; set; }
 
-    public string? Login { get; set; }
-
-    public string? Password { get; set; }
+    public int? LoginJudges { get; set; }
 
     public virtual ICollection<Competition> Competitions { get; set; } = new List<Competition>();
+
+    public virtual Login? LoginJudgesNavigation { get; set; }
 
     public virtual ICollection<Meet> Meets { get; set; } = new List<Meet>();
 }

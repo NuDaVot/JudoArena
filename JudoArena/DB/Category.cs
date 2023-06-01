@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace JudoArena.bd;
+namespace JudoArena.DB;
 
 public partial class Category
 {

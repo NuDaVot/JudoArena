@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using JudoArena.DB;
 
-namespace JudoArena.bd;
+namespace JudoArena;
 
 public partial class Age
 {

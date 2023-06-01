@@ -8,10 +8,14 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="bd\" />
+    <Compile Remove="bd\**" />
+    <EmbeddedResource Remove="bd\**" />
+    <None Remove="bd\**" />
+    <Page Remove="bd\**" />
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="DevExpressMvvm" Version="22.1.3" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.5" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="7.0.5">
       <PrivateAssets>all</PrivateAssets>

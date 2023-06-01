@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "jLz6VbPJWBiiS3CSepv6exuWLsDQfKosCdCRCK0Ii5s/da7Yko3FVoOJU4aXk1NmmcjF5CxH6lvO71FzuvZ2PQ==",
+  "dgSpecHash": "KmLtOt7HHJ/uYjxPBFisQX4Y+S+q7W7kxIldgTZHa+2PkARrLtJcS/2zjJZU5cKQYKYrCchQtFNqPFvpqJ0o2A==",
   "success": true,
-  "projectFilePath": "C:\\Users\\nudan\\source\\repos\\JudoArena\\JudoArena\\JudoArena.csproj",
+  "projectFilePath": "C:\\Users\\nudan\\source\\repos\\NuDaVot\\JudoArena\\JudoArena\\JudoArena.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\nudan\\.nuget\\packages\\devexpressmvvm\\22.1.3\\devexpressmvvm.22.1.3.nupkg.sha512",
     "C:\\Users\\nudan\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\nudan\\.nuget\\packages\\microsoft.entityframeworkcore\\7.0.5\\microsoft.entityframeworkcore.7.0.5.nupkg.sha512",
     "C:\\Users\\nudan\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\7.0.5\\microsoft.entityframeworkcore.abstractions.7.0.5.nupkg.sha512",
