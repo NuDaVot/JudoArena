@@ -10,11 +10,11 @@ none
 false
 TRACE;RELEASE;NET;NET7_0;NETCOREAPP
 C:\Users\nudan\source\repos\NuDaVot\JudoArena\JudoArena\App.xaml
-4-868133784
+5-1461380720
 
-211810500668
+25-474315610
 214-30752451
-Utilit\DataTemplate.xaml;View\MainWindow.xaml;View\SignInPage.xaml;View\SignUpPage.xaml;
+Utilit\DataTemplate.xaml;View\HomePage.xaml;View\MainWindow.xaml;View\SignInPage.xaml;View\SignUpPage.xaml;
 
 True
 

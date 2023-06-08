@@ -15,6 +15,19 @@ global using System.Windows.Shapes;
 
 global using DevExpress.Mvvm;
 global using JudoArena.View;
+global using JudoArena.ViewModel;
+
+global using System.ComponentModel;
+global using System.Runtime.CompilerServices;
+global using System.Security;
+
+global using JudoArena.Model.DB;
+global using JudoArena.Model;
+
+global using System.Text.RegularExpressions;
+
+global using DevExpress.Mvvm.Native;
+global using static System.Runtime.InteropServices.JavaScript.JSType;
 
 
 

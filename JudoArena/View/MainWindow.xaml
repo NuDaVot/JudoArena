@@ -11,9 +11,10 @@
         Width="800">
 
     <Window.DataContext>
-        <vm:Navigation/>
+        <vm:MainWindowVM/>
     </Window.DataContext>
 
     <Frame x:Name="Pages"
-                        Content="{Binding CurrentView}"/>
+           NavigationUIVisibility="Hidden"
+           Content="{Binding CurrentView}"/>
 </Window>

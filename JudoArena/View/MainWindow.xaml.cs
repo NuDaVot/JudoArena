@@ -1,4 +1,9 @@
-﻿namespace JudoArena
+﻿using JudoArena.Model.DB;
+using Microsoft.EntityFrameworkCore;
+using System.Diagnostics;
+using System.Security.Cryptography.Xml;
+
+namespace JudoArena
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml

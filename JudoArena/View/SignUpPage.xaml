@@ -13,7 +13,155 @@
         <vm:SignUpVM/>
     </Page.DataContext>
 
-    <Grid Background="red">
-        
-    </Grid>
+	<Grid d:Background="Aqua">
+		<Grid.RowDefinitions>
+			<RowDefinition Height="1*"/>
+			<RowDefinition Height="9*"/>
+		</Grid.RowDefinitions>
+		<StackPanel Orientation="Horizontal"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center">
+			<Viewbox>
+				<TextBlock Text="Регистрация" />
+			</Viewbox>
+			<Viewbox>
+				<Button Command="{Binding GoSignIn}">Войти</Button>
+			</Viewbox>
+		</StackPanel>
+
+		<TabControl Grid.Row="1">
+			<TabItem Header="Тренер">
+				<Grid>
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition/>
+						<ColumnDefinition/>
+						<ColumnDefinition/>
+					</Grid.ColumnDefinitions>
+
+					<Grid Grid.Column="1"
+                          VerticalAlignment="Center">
+						<Grid.RowDefinitions>
+							<RowDefinition Height="auto"/>
+							<RowDefinition Height="auto"/>
+							<RowDefinition Height="auto"/>
+							<RowDefinition Height="auto"/>
+							<RowDefinition Height="auto"/>
+							<RowDefinition Height="auto"/>
+							<RowDefinition Height="auto"/>
+							<RowDefinition Height="auto"/>
+							<RowDefinition Height="auto"/>
+							<RowDefinition Height="auto"/>
+						</Grid.RowDefinitions>
+
+                        <TextBox Grid.Row="0" 
+                                 Text="{Binding TrainerSurname, 
+                            Mode=TwoWay, 
+                            UpdateSourceTrigger=PropertyChanged}"></TextBox>
+                        <TextBox Grid.Row="1" 
+                                 Text="{Binding TrainerName, 
+                            Mode=TwoWay, 
+                            UpdateSourceTrigger=PropertyChanged}"></TextBox>
+                        <TextBox Grid.Row="2" 
+                                 Text="{Binding TrainerPatronymic, 
+                            Mode=TwoWay, 
+                            UpdateSourceTrigger=PropertyChanged}"></TextBox>
+                        <TextBox Grid.Row="3" 
+                                 Text="{Binding TrainerLicense, 
+                            Mode=TwoWay, 
+                            UpdateSourceTrigger=PropertyChanged}"></TextBox>
+                        <TextBox Grid.Row="4" 
+                                 Text="{Binding TrainerLogin, 
+                            Mode=TwoWay, 
+                            UpdateSourceTrigger=PropertyChanged}"></TextBox>
+                        <TextBox Grid.Row="5" 
+                                 Text="{Binding TrainerPassword, 
+                            Mode=TwoWay, 
+                            UpdateSourceTrigger=PropertyChanged}"></TextBox>
+                        <TextBox Grid.Row="6" 
+                                 Text="{Binding TrainerRepeat, 
+                            Mode=TwoWay, 
+                            UpdateSourceTrigger=PropertyChanged}"></TextBox>
+                        <TextBlock Grid.Row="7" 
+                                   Visibility="{Binding TrainerVisibilityError}"
+                                 Text="{Binding TrainerError, 
+                            Mode=TwoWay, 
+                            UpdateSourceTrigger=PropertyChanged}"></TextBlock>
+						<Button Grid.Row="8"
+                                Command="{Binding TrainerSignUp}">Зарегистрироваться</Button>
+					</Grid>
+				</Grid>
+			</TabItem>
+
+			<TabItem Header="Участник">
+				<Grid>
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition/>
+						<ColumnDefinition/>
+						<ColumnDefinition/>
+					</Grid.ColumnDefinitions>
+
+					<Grid Grid.Column="1"
+                          VerticalAlignment="Center">
+						<Grid.RowDefinitions>
+							<RowDefinition Height="auto"/>
+							<RowDefinition Height="auto"/>
+							<RowDefinition Height="auto"/>
+							<RowDefinition Height="auto"/>
+							<RowDefinition Height="auto"/>
+							<RowDefinition Height="auto"/>
+							<RowDefinition Height="auto"/>
+							<RowDefinition Height="auto"/>
+							<RowDefinition Height="auto"/>
+							<RowDefinition Height="auto"/>
+							<RowDefinition Height="auto"/>
+							<RowDefinition Height="auto"/>
+						</Grid.RowDefinitions>
+
+                        <TextBox Grid.Row="0" 
+                                 Text="{Binding ParticipantSurname, 
+                            Mode=TwoWay, 
+                            UpdateSourceTrigger=PropertyChanged}"></TextBox>
+                        <TextBox Grid.Row="1" 
+                                 Text="{Binding ParticipantName, 
+                            Mode=TwoWay, 
+                            UpdateSourceTrigger=PropertyChanged}"></TextBox>
+                        <TextBox Grid.Row="2" 
+                                 Text="{Binding ParticipantPatronymic, 
+                            Mode=TwoWay, 
+                            UpdateSourceTrigger=PropertyChanged}"></TextBox>
+                        <TextBox Grid.Row="3" 
+                                 Text="{Binding ParticipantWeight, 
+                            Mode=TwoWay, 
+                            UpdateSourceTrigger=PropertyChanged}"></TextBox>
+                        <DatePicker Grid.Row="4"/>
+                        <TextBox Grid.Row="5" 
+                                 Text="{Binding ParticipantHealth, 
+                            Mode=TwoWay, 
+                            UpdateSourceTrigger=PropertyChanged}"></TextBox>
+                        <TextBox Grid.Row="6" 
+                                 Text="{Binding ParticipantLogin, 
+                            Mode=TwoWay, 
+                            UpdateSourceTrigger=PropertyChanged}"></TextBox>
+                        <TextBox Grid.Row="7" 
+                                 Text="{Binding ParticipantPassword, 
+                            Mode=TwoWay, 
+                            UpdateSourceTrigger=PropertyChanged}"></TextBox>
+                        <TextBox Grid.Row="8" 
+                                 Text="{Binding ParticipantRepeat, 
+                            Mode=TwoWay, 
+                            UpdateSourceTrigger=PropertyChanged}"></TextBox>
+                        <TextBlock Grid.Row="9"
+                                   Visibility="{Binding ParticipanVisibilityError}"
+                                 Text="{Binding ParticipantError, 
+                            Mode=TwoWay, 
+                            UpdateSourceTrigger=PropertyChanged}"></TextBlock>
+						<Button Grid.Row="10"
+                                Command="{Binding ParticipantSignUp}">Зарегистрироваться</Button>
+
+					</Grid>
+				</Grid>
+			</TabItem>
+		</TabControl>
+	</Grid>
+    
 </Page>

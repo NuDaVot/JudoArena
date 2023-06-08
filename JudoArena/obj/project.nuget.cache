@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "KmLtOt7HHJ/uYjxPBFisQX4Y+S+q7W7kxIldgTZHa+2PkARrLtJcS/2zjJZU5cKQYKYrCchQtFNqPFvpqJ0o2A==",
+  "dgSpecHash": "hDwn5wr0ugPS3oa5DD+iuCnhWxEZ+2b93kEIle1V69P8n/S9jnMr5Adz/2Nigo7MScdR1StQXsJrTYXOUglHPQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\nudan\\source\\repos\\NuDaVot\\JudoArena\\JudoArena\\JudoArena.csproj",
+  "projectFilePath": "C:\\Users\\nudan\\Source\\Repos\\NuDaVot\\JudoArena\\JudoArena\\JudoArena.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\nudan\\.nuget\\packages\\devexpressmvvm\\22.1.3\\devexpressmvvm.22.1.3.nupkg.sha512",
     "C:\\Users\\nudan\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",

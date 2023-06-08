@@ -13,11 +13,62 @@
         <vm:SignInVM/>
     </Page.DataContext>
 
-    <Grid Background="Yellow">
+    <Grid d:Background="Aqua">
 
-        <Button Width="100" 
-                Height="100"
-                Command="{Binding GoSignUp}"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Grid Grid.Column="1"
+              VerticalAlignment="Center">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+            
+            <StackPanel Grid.Row="0"
+                        Orientation="Horizontal"
+                        HorizontalAlignment="Center">
+                <TextBlock >Авторизация</TextBlock>
+                
+                <Button Width="20"
+                        Visibility="{Binding VisibilityLoading}"/>
+                
+            </StackPanel>
+            
+            <TextBox 
+                    Grid.Row="1"
+                    Text="{Binding Login, 
+                Mode=TwoWay, 
+                UpdateSourceTrigger=PropertyChanged}"/>
+            
+            <StackPanel Grid.Row="3">
+                    <TextBox Text="{Binding Password, 
+                        Mode=TwoWay, 
+                        UpdateSourceTrigger=PropertyChanged}"/>
+                
+                    <TextBlock Text="{Binding Error, 
+                        Mode=TwoWay, 
+                        UpdateSourceTrigger=PropertyChanged}"
+                           Visibility="{Binding VisibilityErrot}"/>
+                
+            </StackPanel>
+            
+            <Button Grid.Row="4"
+                    Command="{Binding SignIn}">Войти</Button>
+            
+            <Button Grid.Row="5"
+                    Command="{Binding GoSignUp}">Зарегистрироваться</Button>
+
+        </Grid>
+
 
     </Grid>
 </Page>

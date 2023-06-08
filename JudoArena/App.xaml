@@ -4,6 +4,6 @@
              xmlns:local="clr-namespace:JudoArena"
              StartupUri="View/MainWindow.xaml">
     <Application.Resources>
-        <ResourceDictionary Source="Utilit/DataTemplate.xaml" />
+        <ResourceDictionary Source="Utilit/DataTemplate.xaml"/>
     </Application.Resources>
 </Application>
