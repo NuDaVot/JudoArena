@@ -89,7 +89,7 @@ namespace JudoArena.ViewModel
             }
             if (TrainerLicense.Length != 10)
             {
-                TrainerError = $"Лицензия состоит из 10 цыфр";
+                TrainerError = $"Лицензия состоит из 10 цифр";
                 return;
             }
             if (TrainerLogin.Length < 7)
@@ -104,7 +104,7 @@ namespace JudoArena.ViewModel
             }
             if (!IsCheckedPassword(TrainerPassword, 10))
             {
-                TrainerError = $"Пароль должен состять из 10 символов,\nиз букв и цыфр";
+                TrainerError = $"Пароль должен состоять из 10 символов,\nиз букв и цыфр";
                 return;
             }
             if (!TrainerPassword.Equals(TrainerRepeat))
@@ -230,7 +230,7 @@ namespace JudoArena.ViewModel
             }
             if (ParticipantHealth.Length != 10)
             {
-                ParticipantError = $"Страховка состоит из 10 цыфр";
+                ParticipantError = $"Страховка состоит из 10 цифр";
                 return;
             }
             if (ParticipantLogin.Length < 7)
@@ -245,7 +245,7 @@ namespace JudoArena.ViewModel
             }
             if (!IsCheckedPassword(ParticipantPassword, 10))
             {
-                ParticipantError = $"Пароль должен состять из 10 символов,\nиз букв и цыфр";
+                ParticipantError = $"Пароль должен состоять из 10 символов, из букв и цифр";
                 return;
             }
             if (!ParticipantPassword.Equals(ParticipantRepeat))
@@ -260,7 +260,7 @@ namespace JudoArena.ViewModel
                 DateOnly data = DateOnly.FromDateTime(ParticipantDateBirth.Value);
                 UserInterface User = controlUser.AddParticipant(ParticipantSurname, ParticipantName, ParticipantPatronymic,
                                                            result, data, ParticipantHealth, ParticipantLogin, ParticipantPassword);
-                ParticipantError = "Ecgtith";
+
                 _navigation.Data = new object[] { User, 0 };
                 _navigation.CurrentView = new HomeVM();
                 

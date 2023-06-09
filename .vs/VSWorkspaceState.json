@@ -2,8 +2,7 @@
   "ExpandedNodes": [
     "",
     "\\JudoArena",
-    "\\JudoArena\\View",
-    "\\JudoArena\\ViewModel"
+    "\\JudoArena\\View"
   ],
   "SelectedNode": "\\JudoArena\\View\\SignUpPage.xaml",
   "PreviewInSolutionExplorer": false

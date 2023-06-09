@@ -32,8 +32,14 @@
                 <RowDefinition Height="auto"/>
                 <RowDefinition Height="auto"/>
             </Grid.RowDefinitions>
-            
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+
             <StackPanel Grid.Row="0"
+                        Grid.ColumnSpan="2"
                         Orientation="Horizontal"
                         HorizontalAlignment="Center">
                 <TextBlock >Авторизация</TextBlock>
@@ -42,29 +48,33 @@
                         Visibility="{Binding VisibilityLoading}"/>
                 
             </StackPanel>
-            
-            <TextBox 
-                    Grid.Row="1"
-                    Text="{Binding Login, 
-                Mode=TwoWay, 
-                UpdateSourceTrigger=PropertyChanged}"/>
-            
-            <StackPanel Grid.Row="3">
-                    <TextBox Text="{Binding Password, 
-                        Mode=TwoWay, 
-                        UpdateSourceTrigger=PropertyChanged}"/>
-                
-                    <TextBlock Text="{Binding Error, 
+
+            <TextBlock Grid.Column="0"
+                       Grid.Row="1">Логин</TextBlock>
+            <TextBox Grid.Column="1"
+                     Grid.Row="1"
+                     Text="{Binding Login, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+
+            <TextBlock Grid.Column="0"
+                       Grid.Row="2">Пароль </TextBlock>
+            <TextBox Grid.Column="1"
+                     Grid.Row="2"
+                     Text="{Binding Password, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+
+
+
+            <TextBlock Grid.Row="3"
+                         Grid.ColumnSpan="2" Text="{Binding Error, 
                         Mode=TwoWay, 
                         UpdateSourceTrigger=PropertyChanged}"
                            Visibility="{Binding VisibilityErrot}"/>
-                
-            </StackPanel>
-            
+
             <Button Grid.Row="4"
+                     Grid.ColumnSpan="2"
                     Command="{Binding SignIn}">Войти</Button>
             
             <Button Grid.Row="5"
+                     Grid.ColumnSpan="2"
                     Command="{Binding GoSignUp}">Зарегистрироваться</Button>
 
         </Grid>

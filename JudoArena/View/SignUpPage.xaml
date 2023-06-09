@@ -33,9 +33,9 @@
             <TabItem Header="Тренер">
                 <Grid>
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition/>
-                        <ColumnDefinition/>
-                        <ColumnDefinition/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="2*"/>
+                        <ColumnDefinition Width="1*"/>
                     </Grid.ColumnDefinitions>
 
                     <Grid Grid.Column="1"
@@ -53,40 +53,68 @@
                             <RowDefinition Height="auto"/>
                         </Grid.RowDefinitions>
 
-                        <TextBox Grid.Row="0" 
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+
+                        <TextBlock Grid.Column="0"
+                                   Grid.Row="0">Фамилия</TextBlock>
+                        <TextBox Grid.Row="0"
+                                 Grid.Column="1"
                                  Text="{Binding TrainerSurname, 
                             Mode=TwoWay, 
                             UpdateSourceTrigger=PropertyChanged}"></TextBox>
+                        <TextBlock Grid.Column="0"
+                                   Grid.Row="1">Имя</TextBlock>
                         <TextBox Grid.Row="1" 
+                                 Grid.Column="1"
                                  Text="{Binding TrainerName, 
                             Mode=TwoWay, 
                             UpdateSourceTrigger=PropertyChanged}"></TextBox>
+                        <TextBlock Grid.Column="0"
+                                   Grid.Row="2">Отчество</TextBlock>
                         <TextBox Grid.Row="2" 
+                                 Grid.Column="1"
                                  Text="{Binding TrainerPatronymic, 
                             Mode=TwoWay, 
                             UpdateSourceTrigger=PropertyChanged}"></TextBox>
+                        <TextBlock Grid.Column="0"
+                                   Grid.Row="3">Номер лицензии</TextBlock>
                         <TextBox Grid.Row="3" 
+                                 Grid.Column="1"
                                  Text="{Binding TrainerLicense, 
                             Mode=TwoWay, 
                             UpdateSourceTrigger=PropertyChanged}"></TextBox>
+                        <TextBlock Grid.Column="0"
+                                   Grid.Row="4">Логин</TextBlock>
                         <TextBox Grid.Row="4" 
+                                 Grid.Column="1"
                                  Text="{Binding TrainerLogin, 
                             Mode=TwoWay, 
                             UpdateSourceTrigger=PropertyChanged}"></TextBox>
+                        <TextBlock Grid.Column="0"
+                                   Grid.Row="5">Пароль</TextBlock>
                         <TextBox Grid.Row="5" 
+                                 Grid.Column="1"
                                  Text="{Binding TrainerPassword, 
                             Mode=TwoWay, 
                             UpdateSourceTrigger=PropertyChanged}"></TextBox>
+                        <TextBlock Grid.Column="0"
+                                   Grid.Row="6">Повторить пароль</TextBlock>
                         <TextBox Grid.Row="6" 
+                                 Grid.Column="1"
                                  Text="{Binding TrainerRepeat, 
                             Mode=TwoWay, 
                             UpdateSourceTrigger=PropertyChanged}"></TextBox>
                         <TextBlock Grid.Row="7" 
+                                   Grid.ColumnSpan="2"
                                    Visibility="{Binding TrainerVisibilityError}"
                                  Text="{Binding TrainerError, 
                             Mode=TwoWay, 
                             UpdateSourceTrigger=PropertyChanged}"></TextBlock>
                         <Button Grid.Row="8"
+                                 Grid.ColumnSpan="2"
                                 Command="{Binding TrainerSignUp}">Зарегистрироваться</Button>
                     </Grid>
                 </Grid>
@@ -95,9 +123,9 @@
             <TabItem Header="Участник">
                 <Grid>
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition/>
-                        <ColumnDefinition/>
-                        <ColumnDefinition/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="2*"/>
+                        <ColumnDefinition Width="1*"/>
                     </Grid.ColumnDefinitions>
 
                     <Grid Grid.Column="1"
@@ -117,48 +145,82 @@
                             <RowDefinition Height="auto"/>
                         </Grid.RowDefinitions>
 
-                        <TextBox Grid.Row="0" 
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        
+                        <TextBlock Grid.Column="0"
+                                   Grid.Row="0">Фамилия</TextBlock>
+                        <TextBox Grid.Row="0"
+                                 Grid.Column="1" 
                                  Text="{Binding ParticipantSurname, 
                             Mode=TwoWay, 
                             UpdateSourceTrigger=PropertyChanged}"></TextBox>
-                        <TextBox Grid.Row="1" 
+                        <TextBlock Grid.Column="0"
+                                   Grid.Row="1">Имя</TextBlock>
+                        <TextBox Grid.Row="1"
+                                 Grid.Column="1" 
                                  Text="{Binding ParticipantName, 
                             Mode=TwoWay, 
                             UpdateSourceTrigger=PropertyChanged}"></TextBox>
+                        <TextBlock Grid.Column="0"
+                                   Grid.Row="2">Отчество</TextBlock>
                         <TextBox Grid.Row="2" 
+                                 Grid.Column="1"
                                  Text="{Binding ParticipantPatronymic, 
                             Mode=TwoWay, 
                             UpdateSourceTrigger=PropertyChanged}"></TextBox>
+                        <TextBlock Grid.Column="0"
+                                   Grid.Row="3">Вес</TextBlock>
                         <TextBox Grid.Row="3" 
+                                 Grid.Column="1"
                                  Text="{Binding ParticipantWeight, 
                             Mode=TwoWay, 
                             UpdateSourceTrigger=PropertyChanged}"></TextBox>
+                        <TextBlock Grid.Column="0"
+                                   Grid.Row="4">Дата рождения</TextBlock>
                         <DatePicker Grid.Row="4"
+                                    Grid.Column="1"
                                     SelectedDate="{Binding ParticipantDateBirth}" 
                                     DisplayDateStart="{Binding DateStart}"
                                     DisplayDateEnd="{Binding DateEnd}"/>
+                        <TextBlock Grid.Column="0"
+                                   Grid.Row="5">Номер страховки</TextBlock>
                         <TextBox Grid.Row="5" 
+                                 Grid.Column="1"
                                  Text="{Binding ParticipantHealth, 
                             Mode=TwoWay, 
                             UpdateSourceTrigger=PropertyChanged}"></TextBox>
+                        <TextBlock Grid.Column="0"
+                                   Grid.Row="6">Логин</TextBlock>
                         <TextBox Grid.Row="6" 
+                                 Grid.Column="1"
                                  Text="{Binding ParticipantLogin, 
                             Mode=TwoWay, 
                             UpdateSourceTrigger=PropertyChanged}"></TextBox>
+                        <TextBlock Grid.Column="0"
+                                   Grid.Row="7">Пароль</TextBlock>
                         <TextBox Grid.Row="7" 
+                                 Grid.Column="1"
                                  Text="{Binding ParticipantPassword, 
                             Mode=TwoWay, 
                             UpdateSourceTrigger=PropertyChanged}"></TextBox>
+                        <TextBlock Grid.Column="0"
+                                   Grid.Row="8">Повторить пароль</TextBlock>
                         <TextBox Grid.Row="8" 
+                                 Grid.Column="1"
                                  Text="{Binding ParticipantRepeat, 
                             Mode=TwoWay, 
                             UpdateSourceTrigger=PropertyChanged}"></TextBox>
                         <TextBlock Grid.Row="9"
+                                   Grid.ColumnSpan="2"
                                    Visibility="{Binding ParticipanVisibilityError}"
                                  Text="{Binding ParticipantError, 
                             Mode=TwoWay, 
                             UpdateSourceTrigger=PropertyChanged}"></TextBlock>
                         <Button Grid.Row="10"
+                                Grid.ColumnSpan="2"
                                 Command="{Binding ParticipantSignUp}">Зарегистрироваться</Button>
                     </Grid>
                 </Grid>
