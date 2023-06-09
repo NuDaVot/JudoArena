@@ -11,7 +11,7 @@ namespace JudoArena.ViewModel
         public HomeVM()
         {
             _navigation = MainWindowVM.Navigation;
-           
+
             switch (((int)((object[])_navigation.Data)[1]))
             {
                 case 0:

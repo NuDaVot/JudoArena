@@ -151,12 +151,10 @@ public partial class JudoContext : DbContext
 
             entity.ToTable("login");
 
-            entity.Property(e => e.Id)
-                .ValueGeneratedNever()
-                .HasColumnName("id");
-            entity.Property(e => e.Loggin)
+            entity.Property(e => e.Id).HasColumnName("id");
+            entity.Property(e => e.Login1)
                 .HasMaxLength(45)
-                .HasColumnName("loggin");
+                .HasColumnName("login");
             entity.Property(e => e.Password)
                 .HasMaxLength(45)
                 .HasColumnName("password");
@@ -219,11 +217,11 @@ public partial class JudoContext : DbContext
 
             entity.HasIndex(e => e.LoginParticipant, "FK_id_login_participant_idx");
 
-            entity.Property(e => e.Id)
-                .ValueGeneratedNever()
-                .HasColumnName("id");
+            entity.Property(e => e.Id).HasColumnName("id");
             entity.Property(e => e.DateBirth).HasColumnName("date_birth");
-            entity.Property(e => e.HealthInsuranceNumber).HasColumnName("health_insurance_number");
+            entity.Property(e => e.HealthInsuranceNumber)
+                .HasMaxLength(10)
+                .HasColumnName("health_insurance_number");
             entity.Property(e => e.LoginParticipant).HasColumnName("login_participant");
             entity.Property(e => e.Name)
                 .HasMaxLength(45)
@@ -284,10 +282,10 @@ public partial class JudoContext : DbContext
 
             entity.HasIndex(e => e.LoginTrainer, "FK_id_login_trainer_idx");
 
-            entity.Property(e => e.Id)
-                .ValueGeneratedNever()
-                .HasColumnName("id");
-            entity.Property(e => e.LicenseNumber).HasColumnName("license_number");
+            entity.Property(e => e.Id).HasColumnName("id");
+            entity.Property(e => e.LicenseNumber)
+                .HasMaxLength(10)
+                .HasColumnName("license_number");
             entity.Property(e => e.LoginTrainer).HasColumnName("login_trainer");
             entity.Property(e => e.Name)
                 .HasMaxLength(45)

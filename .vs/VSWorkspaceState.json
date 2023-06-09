@@ -2,10 +2,9 @@
   "ExpandedNodes": [
     "",
     "\\JudoArena",
-    "\\JudoArena\\Utilit",
     "\\JudoArena\\View",
     "\\JudoArena\\ViewModel"
   ],
-  "SelectedNode": "\\JudoArena\\Utilit\\DataTemplate.xaml",
+  "SelectedNode": "\\JudoArena\\View\\SignUpPage.xaml",
   "PreviewInSolutionExplorer": false
 }

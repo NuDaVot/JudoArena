@@ -7,7 +7,7 @@ public partial class Login
 {
     public int Id { get; set; }
 
-    public string? Loggin { get; set; }
+    public string? Login1 { get; set; }
 
     public string? Password { get; set; }
 
