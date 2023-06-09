@@ -92,6 +92,8 @@ namespace JudoArena.ViewModel
         public SignInVM()
         {
             _navigation = MainWindowVM.Navigation;
+            Password = "admin123";
+            Login = "admin";
         }
     }
 }
