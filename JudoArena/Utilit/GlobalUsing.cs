@@ -30,4 +30,11 @@ global using DevExpress.Mvvm.Native;
 global using static System.Runtime.InteropServices.JavaScript.JSType;
 
 
+global using System.Globalization;
+
+global using Microsoft.EntityFrameworkCore;
+global using System.Security.Cryptography.X509Certificates;
+global using System.Threading;
+
+
 

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "hDwn5wr0ugPS3oa5DD+iuCnhWxEZ+2b93kEIle1V69P8n/S9jnMr5Adz/2Nigo7MScdR1StQXsJrTYXOUglHPQ==",
+  "dgSpecHash": "1+HUNx5VLrzsGDms5WS2umb9o+/ybSGmwCjPlx7cD6M50ADfnw1kGFfY7ALAtguueEwoXHEmlR7REOBCDdOSqQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\nudan\\Source\\Repos\\NuDaVot\\JudoArena\\JudoArena\\JudoArena.csproj",
   "expectedPackageFiles": [
@@ -22,9 +22,12 @@
     "C:\\Users\\nudan\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\7.0.0\\microsoft.extensions.logging.abstractions.7.0.0.nupkg.sha512",
     "C:\\Users\\nudan\\.nuget\\packages\\microsoft.extensions.options\\7.0.0\\microsoft.extensions.options.7.0.0.nupkg.sha512",
     "C:\\Users\\nudan\\.nuget\\packages\\microsoft.extensions.primitives\\7.0.0\\microsoft.extensions.primitives.7.0.0.nupkg.sha512",
+    "C:\\Users\\nudan\\.nuget\\packages\\microsoft.xaml.behaviors.wpf\\1.1.31\\microsoft.xaml.behaviors.wpf.1.1.31.nupkg.sha512",
     "C:\\Users\\nudan\\.nuget\\packages\\mono.texttemplating\\2.2.1\\mono.texttemplating.2.2.1.nupkg.sha512",
     "C:\\Users\\nudan\\.nuget\\packages\\mysqlconnector\\2.2.5\\mysqlconnector.2.2.5.nupkg.sha512",
     "C:\\Users\\nudan\\.nuget\\packages\\pomelo.entityframeworkcore.mysql\\7.0.0\\pomelo.entityframeworkcore.mysql.7.0.0.nupkg.sha512",
+    "C:\\Users\\nudan\\.nuget\\packages\\prism.core\\8.1.97\\prism.core.8.1.97.nupkg.sha512",
+    "C:\\Users\\nudan\\.nuget\\packages\\prism.wpf\\8.1.97\\prism.wpf.8.1.97.nupkg.sha512",
     "C:\\Users\\nudan\\.nuget\\packages\\system.codedom\\4.4.0\\system.codedom.4.4.0.nupkg.sha512",
     "C:\\Users\\nudan\\.nuget\\packages\\system.text.encodings.web\\7.0.0\\system.text.encodings.web.7.0.0.nupkg.sha512",
     "C:\\Users\\nudan\\.nuget\\packages\\system.text.json\\7.0.0\\system.text.json.7.0.0.nupkg.sha512"

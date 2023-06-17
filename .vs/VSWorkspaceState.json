@@ -5,6 +5,6 @@
     "\\JudoArena\\View",
     "\\JudoArena\\ViewModel"
   ],
-  "SelectedNode": "\\JudoArena\\View\\SignUpPage.xaml",
+  "SelectedNode": "\\JudoArena\\ViewModel\\SignInVM.cs",
   "PreviewInSolutionExplorer": false
 }

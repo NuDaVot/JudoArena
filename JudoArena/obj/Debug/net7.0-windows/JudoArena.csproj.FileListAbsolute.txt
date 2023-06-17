@@ -89,3 +89,6 @@ C:\Users\nudan\Source\Repos\NuDaVot\JudoArena\JudoArena\obj\Debug\net7.0-windows
 C:\Users\nudan\Source\Repos\NuDaVot\JudoArena\JudoArena\obj\Debug\net7.0-windows\ref\JudoArena.dll
 C:\Users\nudan\source\repos\NuDaVot\JudoArena\JudoArena\obj\Debug\net7.0-windows\View\HomePage.g.cs
 C:\Users\nudan\source\repos\NuDaVot\JudoArena\JudoArena\obj\Debug\net7.0-windows\View\HomePage.baml
+C:\Users\nudan\Source\Repos\NuDaVot\JudoArena\JudoArena\bin\Debug\net7.0-windows\Microsoft.Xaml.Behaviors.dll
+C:\Users\nudan\Source\Repos\NuDaVot\JudoArena\JudoArena\bin\Debug\net7.0-windows\Prism.dll
+C:\Users\nudan\Source\Repos\NuDaVot\JudoArena\JudoArena\bin\Debug\net7.0-windows\Prism.Wpf.dll

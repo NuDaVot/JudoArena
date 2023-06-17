@@ -13,6 +13,7 @@ namespace JudoArena
         public MainWindow()
         {
             InitializeComponent();
+
         }
     }
 }

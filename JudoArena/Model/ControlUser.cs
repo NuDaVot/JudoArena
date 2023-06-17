@@ -1,7 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
-using System.Security.Cryptography.X509Certificates;
-using System.Threading;
-
+﻿
 namespace JudoArena.Model
 {
     class ControlUser

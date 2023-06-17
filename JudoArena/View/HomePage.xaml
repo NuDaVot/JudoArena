@@ -5,14 +5,176 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:JudoArena.View"
       xmlns:vm="clr-namespace:JudoArena.ViewModel"
+      xmlns:ut="clr-namespace:JudoArena.Utilit"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="HomePage">
     <Page.DataContext>
         <vm:HomeVM/>
     </Page.DataContext>
-    <Grid Background="red">
-        <Label Content="{Binding da}"></Label>
+    <Page.Resources>
+        <ut:FirstCharConverter x:Key="FirstCharConverter" />
+    </Page.Resources>
+    <Grid Background="Aqua"
+          ShowGridLines="True">
+
+        <!--<Grid.Effect>
+            <BlurEffect Radius="20"/>
+        </Grid.Effect>-->
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="8*"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Grid VerticalAlignment="Center">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+
+            <TextBox Grid.Column="0"
+                     Text="{Binding Search, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+
+            <Button Command="{Binding Sorting}"
+                    Content="&lt;>"
+                    Grid.Column="1"/>
+        </Grid>
+
+        <Viewbox Grid.Column="1">
+            <TextBlock Text="Список соревнований" HorizontalAlignment="Center"/>
+        </Viewbox>
+
+
+
+        <StackPanel Orientation="Horizontal"
+                    HorizontalAlignment="Right"
+                    VerticalAlignment="Center"
+                    Grid.Column="2">
+            <Viewbox>
+                <Button Command="{Binding GoSignIn}">Выйти</Button>
+            </Viewbox>
+
+            <StackPanel Orientation="Horizontal"
+                                            HorizontalAlignment="Center"
+                                            VerticalAlignment="Center"
+                                            Grid.Column="3">
+                <TextBlock HorizontalAlignment="Center"
+                           Text="{Binding User.Surname, StringFormat='{}{0} '}"/>
+                <TextBlock HorizontalAlignment="Center"
+                           Text="{Binding User.Name, StringFormat='{}{0}.', Converter={StaticResource FirstCharConverter}}"/>
+                <TextBlock HorizontalAlignment="Center"
+                           Text="{Binding User.Patronymic, StringFormat='{}{0}.', Converter={StaticResource FirstCharConverter}}"/>
+            </StackPanel>
+            <!--<Viewbox>
+                <Button Command="{Binding GoProfile}"
+                        Content="{Binding FullName}"></Button>
+            </Viewbox>-->
+
+        </StackPanel>
+
+        <Border Grid.Row="1"
+                Grid.ColumnSpan="3">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <Viewbox>
+                    <TextBlock Text="Название"/>
+                </Viewbox>
+
+                <Viewbox Grid.Column="1">
+                    <TextBlock Text="Дата"/>
+                </Viewbox>
+
+                <Viewbox Grid.Column="2">
+                    <TextBlock Text="Адрес"/>
+                </Viewbox>
+
+                <Viewbox Grid.Column="3">
+                    <TextBlock Text="Организатор"/>
+                </Viewbox>
+
+            </Grid>
+            
+        </Border>
+
+
+        <Button Grid.Column="2"
+                Grid.Row="2"
+                HorizontalAlignment="Right"
+                VerticalAlignment="Bottom"
+                Width="50"
+                Height="50"
+                Margin="20"
+                Panel.ZIndex="3"
+                Visibility="{Binding Visibility}">+
+
+        </Button>
+
         
+        
+        <ScrollViewer Grid.Row="2"
+                      Grid.ColumnSpan="3"
+                      Panel.ZIndex="1">
+            <ItemsControl ItemsSource="{Binding ObjectList}">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <Button Command="{Binding DataContext.ChangePage, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}"
+                                CommandParameter="{Binding}"
+                                HorizontalContentAlignment="Stretch">
+
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Text="{Binding Name}" 
+                                           FontWeight="Bold" 
+                                           Grid.Column="0"
+                                           HorizontalAlignment="Center"/>
+                                <TextBlock Text="{Binding Date}" 
+                                           Grid.Column="1"
+                                           HorizontalAlignment="Center"/>
+                                <TextBlock Text="{Binding Address}" 
+                                           Grid.Column="2"
+                                           HorizontalAlignment="Center"/>
+                                <StackPanel Orientation="Horizontal"
+                                            HorizontalAlignment="Center"
+                                            VerticalAlignment="Center"
+                                            Grid.Column="3">
+                                    <TextBlock HorizontalAlignment="Center"
+                                           Text="{Binding OrganizerNavigation.Surname, StringFormat='{}{0} '}"/>
+                                    <TextBlock HorizontalAlignment="Center"
+                                           Text="{Binding OrganizerNavigation.Name, StringFormat='{}{0}.', Converter={StaticResource FirstCharConverter}}"/>
+                                    <TextBlock HorizontalAlignment="Center"
+                                           Text="{Binding OrganizerNavigation.Patronymic, StringFormat='{}{0}.', Converter={StaticResource FirstCharConverter}}"/>
+                                </StackPanel>
+                            </Grid>
+                        </Button>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </ScrollViewer>
+        <!--<Border 
+                Grid.ColumnSpan="3"
+                Grid.RowSpan="3"
+                Panel.ZIndex="4" Background="#0CFF4AF0" 
+            >
+            
+        </Border>-->
     </Grid>
 </Page>

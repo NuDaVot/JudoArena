@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
+﻿
 namespace JudoArena.Model.DB;
 
 public partial class Competition

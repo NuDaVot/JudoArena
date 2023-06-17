@@ -14,7 +14,7 @@
         <vm:MainWindowVM/>
     </Window.DataContext>
 
-    <Frame x:Name="Pages"
+    <Frame x:Name="MainFrame"
            NavigationUIVisibility="Hidden"
            Content="{Binding CurrentView}"/>
 </Window>
