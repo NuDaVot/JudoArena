@@ -5,16 +5,16 @@ winexe
 C#
 .cs
 C:\Users\nudan\Source\Repos\NuDaVot\JudoArena\JudoArena\obj\Debug\net7.0-windows\
-JudoArena
+JudoArena_voz1hqhi_wpftmp
 none
 false
-TRACE;DEBUG;NET;NET7_0;NETCOREAPP
+TRACE;RELEASE;NET;NET7_0;NETCOREAPP
 C:\Users\nudan\Source\Repos\NuDaVot\JudoArena\JudoArena\App.xaml
-5-1461380720
+6-1685675731
 
-27-323828142
-217848768134
-Utilit\DataTemplate.xaml;View\HomePage.xaml;View\MainWindow.xaml;View\SignInPage.xaml;View\SignUpPage.xaml;
+35-283373906
+438-1992048508
+Utilit\DataTemplate.xaml;View\HomePage.xaml;View\MainWindow.xaml;View\SignInPage.xaml;View\SignUpPage.xaml;View\Window1.xaml;
 
 False
 

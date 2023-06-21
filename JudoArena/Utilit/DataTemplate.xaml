@@ -1,19 +1,7 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                     xmlns:vm="clr-namespace:JudoArena.ViewModel"
-                    xmlns:view="clr-namespace:JudoArena.View">
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     
-    <DataTemplate DataType="{x:Type vm:SignInVM}">
-        <view:SignInPage/>
-    </DataTemplate>
-
-    <DataTemplate DataType="{x:Type vm:SignUpVM}">
-        <view:SignUpPage/>
-    </DataTemplate>
-
-    <DataTemplate DataType="{x:Type vm:HomeVM}">
-        <view:HomePage/>
-    </DataTemplate>
+   
 
     
 </ResourceDictionary>

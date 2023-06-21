@@ -13,28 +13,30 @@
         <vm:SignUpVM/>
     </Page.DataContext>
 
-    <Grid d:Background="Aqua">
+    <Grid >
         <Grid.RowDefinitions>
-            <RowDefinition Height="1*"/>
+            <RowDefinition Height="Auto"/>
             <RowDefinition Height="9*"/>
         </Grid.RowDefinitions>
         <StackPanel Orientation="Horizontal"
                     HorizontalAlignment="Center"
                     VerticalAlignment="Center">
-            <Viewbox>
-                <TextBlock Text="Регистрация" />
-            </Viewbox>
-            <Viewbox>
-                <Button Command="{Binding GoSignIn}">Войти</Button>
-            </Viewbox>
+            <TextBlock Text="Регистрация" 
+                       Style="{StaticResource Header}"
+                       Margin="0, 30, 0, 0"/>
+            
         </StackPanel>
 
         <TabControl Grid.Row="1">
-            <TabItem Header="Тренер">
+            <TabItem>
+                <TabItem.Header>
+                    <TextBlock Text="Тренер"
+                               Style="{StaticResource PlainText}"/>
+                </TabItem.Header>
                 <Grid>
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="1*"/>
-                        <ColumnDefinition Width="2*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="1*"/>
                     </Grid.ColumnDefinitions>
 
@@ -59,72 +61,106 @@
                         </Grid.ColumnDefinitions>
 
                         <TextBlock Grid.Column="0"
-                                   Grid.Row="0">Фамилия</TextBlock>
+                                   Grid.Row="0"
+                                   Style="{StaticResource PlainText}"
+                                   Margin="0, 0, 10, 0">Фамилия</TextBlock>
                         <TextBox Grid.Row="0"
                                  Grid.Column="1"
+                                 Style="{StaticResource InPut}"
                                  Text="{Binding TrainerSurname, 
                             Mode=TwoWay, 
                             UpdateSourceTrigger=PropertyChanged}"></TextBox>
                         <TextBlock Grid.Column="0"
-                                   Grid.Row="1">Имя</TextBlock>
+                                   Grid.Row="1"
+                                   Style="{StaticResource PlainText}"
+                                   Margin="0, 0, 10, 0">Имя</TextBlock>
                         <TextBox Grid.Row="1" 
                                  Grid.Column="1"
+                                 Style="{StaticResource InPut}"
                                  Text="{Binding TrainerName, 
                             Mode=TwoWay, 
                             UpdateSourceTrigger=PropertyChanged}"></TextBox>
                         <TextBlock Grid.Column="0"
-                                   Grid.Row="2">Отчество</TextBlock>
+                                   Grid.Row="2"
+                                   Style="{StaticResource PlainText}"
+                                   Margin="0, 0, 10, 0">Отчество</TextBlock>
                         <TextBox Grid.Row="2" 
                                  Grid.Column="1"
+                                 Style="{StaticResource InPut}"
                                  Text="{Binding TrainerPatronymic, 
                             Mode=TwoWay, 
                             UpdateSourceTrigger=PropertyChanged}"></TextBox>
                         <TextBlock Grid.Column="0"
-                                   Grid.Row="3">Номер лицензии</TextBlock>
+                                   Grid.Row="3"
+                                   Style="{StaticResource PlainText}"
+                                   Margin="0, 0, 10, 0">Номер лицензии</TextBlock>
                         <TextBox Grid.Row="3" 
                                  Grid.Column="1"
+                                 Style="{StaticResource InPut}"
                                  Text="{Binding TrainerLicense, 
                             Mode=TwoWay, 
                             UpdateSourceTrigger=PropertyChanged}"></TextBox>
                         <TextBlock Grid.Column="0"
-                                   Grid.Row="4">Логин</TextBlock>
+                                   Grid.Row="4"
+                                   Style="{StaticResource PlainText}"
+                                   Margin="0, 0, 10, 0">Логин</TextBlock>
                         <TextBox Grid.Row="4" 
                                  Grid.Column="1"
+                                 Style="{StaticResource InPut}"
                                  Text="{Binding TrainerLogin, 
                             Mode=TwoWay, 
                             UpdateSourceTrigger=PropertyChanged}"></TextBox>
                         <TextBlock Grid.Column="0"
-                                   Grid.Row="5">Пароль</TextBlock>
+                                   Grid.Row="5"
+                                   Style="{StaticResource PlainText}"
+                                   Margin="0, 0, 10, 0">Пароль</TextBlock>
                         <TextBox Grid.Row="5" 
                                  Grid.Column="1"
+                                 Style="{StaticResource InPut}"
                                  Text="{Binding TrainerPassword, 
                             Mode=TwoWay, 
                             UpdateSourceTrigger=PropertyChanged}"></TextBox>
                         <TextBlock Grid.Column="0"
-                                   Grid.Row="6">Повторить пароль</TextBlock>
+                                   Grid.Row="6"
+                                   Style="{StaticResource PlainText}"
+                                   Margin="0, 0, 10, 0">Повторить пароль</TextBlock>
                         <TextBox Grid.Row="6" 
                                  Grid.Column="1"
+                                 Style="{StaticResource InPut}"
                                  Text="{Binding TrainerRepeat, 
                             Mode=TwoWay, 
                             UpdateSourceTrigger=PropertyChanged}"></TextBox>
                         <TextBlock Grid.Row="7" 
                                    Grid.ColumnSpan="2"
+                                   Style="{StaticResource Error}"
                                    Visibility="{Binding TrainerVisibilityError}"
-                                 Text="{Binding TrainerError, 
+                                   Text="{Binding TrainerError, 
                             Mode=TwoWay, 
                             UpdateSourceTrigger=PropertyChanged}"></TextBlock>
                         <Button Grid.Row="8"
-                                 Grid.ColumnSpan="2"
-                                Command="{Binding TrainerSignUp}">Зарегистрироваться</Button>
+                                Grid.Column="0"
+                                Command="{Binding GoSignIn}"
+                                Style="{StaticResource Сancel}"
+                                Margin="0, 0, 10, 0">Отмена</Button>
+                        <Button Grid.Row="8"
+                                Grid.Column="1"
+                                Command="{Binding TrainerSignUp}"
+                                Style="{StaticResource RegularButton}">Зарегистрироваться</Button>
                     </Grid>
+                        
+                        
                 </Grid>
             </TabItem>
 
-            <TabItem Header="Участник">
+            <TabItem >
+                <TabItem.Header>
+                    <TextBlock Text="Участник"
+                               Style="{StaticResource PlainText}"/>
+                </TabItem.Header>
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="1*"/>
-                        <ColumnDefinition Width="2*"/>
+                        <ColumnDefinition Width="1*"/>
                         <ColumnDefinition Width="1*"/>
                     </Grid.ColumnDefinitions>
 
@@ -151,77 +187,103 @@
                         </Grid.ColumnDefinitions>
                         
                         <TextBlock Grid.Column="0"
-                                   Grid.Row="0">Фамилия</TextBlock>
+                                   Grid.Row="0"
+                                   Style="{StaticResource PlainText}">Фамилия</TextBlock>
                         <TextBox Grid.Row="0"
                                  Grid.Column="1" 
+                                 Style="{StaticResource InPut}"
                                  Text="{Binding ParticipantSurname, 
                             Mode=TwoWay, 
                             UpdateSourceTrigger=PropertyChanged}"></TextBox>
                         <TextBlock Grid.Column="0"
-                                   Grid.Row="1">Имя</TextBlock>
+                                   Grid.Row="1"
+                                   Style="{StaticResource PlainText}">Имя</TextBlock>
                         <TextBox Grid.Row="1"
                                  Grid.Column="1" 
+                                 Style="{StaticResource InPut}"
                                  Text="{Binding ParticipantName, 
                             Mode=TwoWay, 
                             UpdateSourceTrigger=PropertyChanged}"></TextBox>
                         <TextBlock Grid.Column="0"
-                                   Grid.Row="2">Отчество</TextBlock>
+                                   Grid.Row="2"
+                                   Style="{StaticResource PlainText}">Отчество</TextBlock>
                         <TextBox Grid.Row="2" 
                                  Grid.Column="1"
+                                 Style="{StaticResource InPut}"
                                  Text="{Binding ParticipantPatronymic, 
                             Mode=TwoWay, 
                             UpdateSourceTrigger=PropertyChanged}"></TextBox>
                         <TextBlock Grid.Column="0"
-                                   Grid.Row="3">Вес</TextBlock>
+                                   Grid.Row="3"
+                                   Style="{StaticResource PlainText}">Вес</TextBlock>
                         <TextBox Grid.Row="3" 
                                  Grid.Column="1"
+                                 Style="{StaticResource InPut}"
                                  Text="{Binding ParticipantWeight, 
                             Mode=TwoWay, 
                             UpdateSourceTrigger=PropertyChanged}"></TextBox>
                         <TextBlock Grid.Column="0"
-                                   Grid.Row="4">Дата рождения</TextBlock>
+                                   Grid.Row="4"
+                                   Style="{StaticResource PlainText}">Дата рождения</TextBlock>
                         <DatePicker Grid.Row="4"
                                     Grid.Column="1"
                                     SelectedDate="{Binding ParticipantDateBirth}" 
                                     DisplayDateStart="{Binding DateStart}"
-                                    DisplayDateEnd="{Binding DateEnd}"/>
+                                    DisplayDateEnd="{Binding DateEnd}"
+                                    FontSize="22"
+                                    FontFamily="Bellota Regular"/>
                         <TextBlock Grid.Column="0"
-                                   Grid.Row="5">Номер страховки</TextBlock>
+                                   Grid.Row="5"
+                                   Style="{StaticResource PlainText}">Номер страховки</TextBlock>
                         <TextBox Grid.Row="5" 
                                  Grid.Column="1"
+                                 Style="{StaticResource InPut}"
                                  Text="{Binding ParticipantHealth, 
                             Mode=TwoWay, 
                             UpdateSourceTrigger=PropertyChanged}"></TextBox>
                         <TextBlock Grid.Column="0"
-                                   Grid.Row="6">Логин</TextBlock>
+                                   Grid.Row="6"
+                                   Style="{StaticResource PlainText}">Логин</TextBlock>
                         <TextBox Grid.Row="6" 
                                  Grid.Column="1"
+                                 Style="{StaticResource InPut}"
                                  Text="{Binding ParticipantLogin, 
                             Mode=TwoWay, 
                             UpdateSourceTrigger=PropertyChanged}"></TextBox>
                         <TextBlock Grid.Column="0"
-                                   Grid.Row="7">Пароль</TextBlock>
+                                   Grid.Row="7"
+                                   Style="{StaticResource PlainText}">Пароль</TextBlock>
                         <TextBox Grid.Row="7" 
                                  Grid.Column="1"
+                                 Style="{StaticResource InPut}"
                                  Text="{Binding ParticipantPassword, 
                             Mode=TwoWay, 
                             UpdateSourceTrigger=PropertyChanged}"></TextBox>
                         <TextBlock Grid.Column="0"
-                                   Grid.Row="8">Повторить пароль</TextBlock>
+                                   Grid.Row="8"
+                                   Style="{StaticResource PlainText}">Повторить пароль</TextBlock>
                         <TextBox Grid.Row="8" 
                                  Grid.Column="1"
+                                 Style="{StaticResource InPut}"
                                  Text="{Binding ParticipantRepeat, 
                             Mode=TwoWay, 
                             UpdateSourceTrigger=PropertyChanged}"></TextBox>
                         <TextBlock Grid.Row="9"
                                    Grid.ColumnSpan="2"
+                                   Style="{StaticResource Error}"
                                    Visibility="{Binding ParticipanVisibilityError}"
                                  Text="{Binding ParticipantError, 
                             Mode=TwoWay, 
                             UpdateSourceTrigger=PropertyChanged}"></TextBlock>
                         <Button Grid.Row="10"
-                                Grid.ColumnSpan="2"
-                                Command="{Binding ParticipantSignUp}">Зарегистрироваться</Button>
+                                Grid.Column="0"
+                                Command="{Binding GoSignIn}"
+                                Style="{StaticResource Сancel}"
+                                Margin="0, 0, 10, 0">Отмена</Button>
+                        <Button Grid.Row="10"
+                                Grid.Column="1"
+                                Command="{Binding ParticipantSignUp}"
+                                Style="{StaticResource RegularButton}">Зарегистрироваться</Button>
                     </Grid>
                 </Grid>
             </TabItem>

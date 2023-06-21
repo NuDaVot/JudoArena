@@ -2,8 +2,109 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:JudoArena"
-             StartupUri="View/MainWindow.xaml">
+             StartupUri="View/MainWindow.xaml"
+             xmlns:vm="clr-namespace:JudoArena.ViewModel"
+             xmlns:view="clr-namespace:JudoArena.View">
     <Application.Resources>
-        <ResourceDictionary Source="Utilit/DataTemplate.xaml"/>
+        
+        <ResourceDictionary >
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Light.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Primary/MaterialDesignColor.Blue.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Accent/MaterialDesignColor.Lime.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+            <Style x:Key="Header"
+                   TargetType="{x:Type TextBlock}">
+                <Setter Property="FontFamily"
+                        Value="Grumpfh Regular"/>
+                <Setter Property="Margin"
+                        Value="0 0 0 20"/>
+                <Setter Property="FontSize"
+                        Value="36"/>
+            </Style>
+
+            <Style x:Key="PlainText"
+                   TargetType="{x:Type TextBlock}">
+                <Setter Property="FontFamily"
+                        Value="Bellota Regular"/>
+                <Setter Property="FontSize"
+                        Value="22"/>
+            </Style>
+
+            <Style x:Key="Error"
+                   TargetType="{x:Type TextBlock}"
+                   BasedOn="{StaticResource MaterialDesignHelperTextBlock}">
+                <Setter Property="FontFamily"
+                        Value="Bellota Regular"/>
+                <Setter Property="FontSize"
+                        Value="16"/>
+                <Setter Property="Foreground"
+                        Value="#C31818"/>
+                <Setter Property="Margin"
+                        Value="0, 10, 0, 10"/>
+            </Style>
+
+            <Style x:Key="InPut"
+                   TargetType="{x:Type TextBox}"
+                   BasedOn="{StaticResource MaterialDesignTextBox}">
+                <Setter Property="FontFamily"
+                        Value="Bellota Regular"/>
+                <Setter Property="FontSize"
+                        Value="22"/>
+                <Setter Property="BorderBrush"
+                        Value="Black"/>
+                <Setter Property="Margin"
+                        Value="0, -5, 0, 0"/>
+            </Style>
+
+            <Style x:Key="RegularButton"
+                   TargetType="{x:Type Button}"
+                   BasedOn="{StaticResource MaterialDesignFlatButton}">
+                <Setter Property="FontFamily"
+                        Value="Bellota Regular"/>
+                <Setter Property="FontSize"
+                        Value="22"/>
+                <Setter Property="Foreground"
+                        Value="#C31818"/>
+                <Setter Property="BorderBrush"
+                        Value="#C31818"/>
+                <Setter Property="BorderThickness"
+                        Value="1"/>
+            </Style>
+
+            <Style x:Key="Сancel"
+                   TargetType="{x:Type Button}"
+                   BasedOn="{StaticResource MaterialDesignFlatButton}">
+                <Setter Property="FontFamily"
+                        Value="Bellota Regular"/>
+                <Setter Property="FontSize"
+                        Value="22"/>
+                <Setter Property="Foreground"
+                        Value="#40A1A7"/>
+                <Setter Property="BorderBrush"
+                        Value="#40A1A7"/>
+                <Setter Property="BorderThickness"
+                        Value="1"/>
+            </Style>
+
+            <SolidColorBrush x:Key="PrimaryHueMidBrush" Color="#C31818"/>
+
+            <DataTemplate DataType="{x:Type vm:SignInVM}">
+                <view:SignInPage/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type vm:SignUpVM}">
+                <view:SignUpPage/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type vm:HomeVM}">
+                <view:HomePage/>
+            </DataTemplate>
+        </ResourceDictionary>
+
     </Application.Resources>
+
+    
+    
 </Application>

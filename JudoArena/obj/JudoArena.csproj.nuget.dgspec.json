@@ -49,6 +49,14 @@
               "target": "Package",
               "version": "[22.1.3, )"
             },
+            "MaterialDesignColors": {
+              "target": "Package",
+              "version": "[2.1.4, )"
+            },
+            "MaterialDesignThemes": {
+              "target": "Package",
+              "version": "[4.9.0, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[7.0.5, )"

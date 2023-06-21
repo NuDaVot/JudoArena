@@ -7,13 +7,14 @@
       xmlns:vm="clr-namespace:JudoArena.ViewModel"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="SignInPage">
+      Title="SignInPage"
+      >
 
     <Page.DataContext>
         <vm:SignInVM/>
     </Page.DataContext>
 
-    <Grid d:Background="Aqua">
+    <Grid Background="White">
 
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
@@ -31,6 +32,7 @@
                 <RowDefinition Height="auto"/>
                 <RowDefinition Height="auto"/>
                 <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
             </Grid.RowDefinitions>
 
             <Grid.ColumnDefinitions>
@@ -38,11 +40,17 @@
                 <ColumnDefinition />
             </Grid.ColumnDefinitions>
 
-            <StackPanel Grid.Row="0"
+            <Image Source="/Resources/Images/FullLogo.png" 
+                   Height="250"
+                   Stretch="Uniform"
+                   VerticalAlignment="Center"
+                   Grid.ColumnSpan="2"/>
+            
+            <StackPanel Grid.Row="1"
                         Grid.ColumnSpan="2"
                         Orientation="Horizontal"
                         HorizontalAlignment="Center">
-                <TextBlock >Авторизация</TextBlock>
+                <TextBlock Style="{StaticResource Header}">Авторизация</TextBlock>
                 
                 <Button Width="20"
                         Visibility="{Binding VisibilityLoading}"/>
@@ -50,32 +58,43 @@
             </StackPanel>
 
             <TextBlock Grid.Column="0"
-                       Grid.Row="1">Логин</TextBlock>
+                       Grid.Row="2"
+                       Style="{StaticResource PlainText}"
+                       Margin="0, 0, 10, 0">Логин</TextBlock>
             <TextBox Grid.Column="1"
-                     Grid.Row="1"
+                     Grid.Row="2"
+                     Style="{StaticResource InPut}"
                      Text="{Binding Login, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
 
             <TextBlock Grid.Column="0"
-                       Grid.Row="2">Пароль </TextBlock>
+                       Grid.Row="3"
+                       Style="{StaticResource PlainText}"
+                        Margin="0, 0, 10, 0">Пароль </TextBlock>
             <TextBox Grid.Column="1"
-                     Grid.Row="2"
+                     Grid.Row="3"
+                     Style="{StaticResource InPut}"
                      Text="{Binding Password, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
 
 
 
-            <TextBlock Grid.Row="3"
-                         Grid.ColumnSpan="2" Text="{Binding Error, 
+            <TextBlock Grid.Row="4"
+                        Grid.ColumnSpan="2" Text="{Binding Error, 
                         Mode=TwoWay, 
                         UpdateSourceTrigger=PropertyChanged}"
-                           Visibility="{Binding VisibilityErrot}"/>
+                        Visibility="{Binding VisibilityErrot}"
+                       Style="{StaticResource Error}"/>
 
-            <Button Grid.Row="4"
-                     Grid.ColumnSpan="2"
-                    Command="{Binding SignIn}">Войти</Button>
-            
             <Button Grid.Row="5"
                      Grid.ColumnSpan="2"
-                    Command="{Binding GoSignUp}">Зарегистрироваться</Button>
+                    Command="{Binding SignIn}"
+                    Style="{StaticResource RegularButton}"
+                    Margin="0, 0, 0, 10">Войти</Button>
+            
+            <Button Grid.Row="6"
+                    Grid.ColumnSpan="2"
+                    Command="{Binding GoSignUp}"
+                    Style="{StaticResource RegularButton}"
+                    Margin="0, 0, 0, 10">Зарегистрироваться</Button>
 
         </Grid>
 
