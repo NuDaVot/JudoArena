@@ -1,0 +1,60 @@
+-- MySQL dump 10.13  Distrib 8.0.31, for Win64 (x86_64)
+--
+-- Host: 127.0.0.1    Database: judo
+-- ------------------------------------------------------
+-- Server version	8.0.31
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!50503 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `participant_category`
+--
+
+DROP TABLE IF EXISTS `participant_category`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `participant_category` (
+  `id` int NOT NULL,
+  `id_participant` int DEFAULT NULL,
+  `id_category` int DEFAULT NULL,
+  `id_trainer` int DEFAULT NULL,
+  `date` date DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `FK_id_trainer_idx` (`id_trainer`),
+  KEY `FK_id_participant_idx` (`id_participant`),
+  KEY `FK_id_category_idx` (`id_category`),
+  CONSTRAINT `FK_id_category` FOREIGN KEY (`id_category`) REFERENCES `category` (`id`),
+  CONSTRAINT `FK_id_participant` FOREIGN KEY (`id_participant`) REFERENCES `participants` (`id`),
+  CONSTRAINT `FK_id_trainer` FOREIGN KEY (`id_trainer`) REFERENCES `trainer` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `participant_category`
+--
+
+LOCK TABLES `participant_category` WRITE;
+/*!40000 ALTER TABLE `participant_category` DISABLE KEYS */;
+INSERT INTO `participant_category` VALUES (1,34,1,1,'2023-04-12'),(2,35,1,2,'2023-04-12'),(3,36,1,3,'2023-04-12'),(4,37,1,4,'2023-04-12'),(5,38,2,1,'2023-04-12'),(6,39,2,2,'2023-04-12'),(7,40,2,3,'2023-04-12'),(8,41,2,4,'2023-04-12'),(9,42,3,1,'2023-08-28'),(10,43,3,2,'2023-08-28'),(11,44,3,3,'2023-08-28'),(12,45,3,4,'2023-08-28'),(13,46,4,1,'2023-08-28'),(14,47,4,2,'2023-08-28'),(15,48,4,3,'2023-08-28'),(16,49,4,4,'2023-08-28'),(17,50,5,1,'2023-02-10'),(18,51,5,2,'2023-02-10'),(19,52,5,3,'2023-02-10'),(20,53,5,4,'2023-02-10'),(21,54,6,1,'2023-02-10'),(22,55,6,2,'2023-02-10'),(23,56,6,3,'2023-02-10'),(24,57,6,4,'2023-02-10'),(25,58,7,1,'2023-02-10'),(26,59,7,2,'2023-02-10'),(27,60,7,3,'2023-02-10'),(28,61,7,4,'2023-02-10'),(29,62,8,1,'2023-11-05'),(30,63,8,2,'2023-11-05'),(31,64,8,3,'2023-11-05'),(32,65,8,4,'2023-11-05'),(33,66,9,1,'2023-11-05'),(34,67,9,2,'2023-11-05'),(35,68,9,3,'2023-11-05'),(36,69,9,4,'2023-11-05'),(37,70,10,1,'2023-06-20'),(38,71,10,2,'2023-06-20'),(39,72,10,3,'2023-06-20'),(40,73,10,4,'2023-06-20'),(41,74,11,1,'2023-06-20'),(42,75,11,2,'2023-06-20'),(43,76,11,3,'2023-06-20'),(44,77,11,4,'2023-06-20'),(45,78,12,1,'2023-06-20'),(46,79,12,2,'2023-06-20'),(47,80,12,3,'2023-06-20'),(48,81,12,4,'2023-06-20'),(49,82,13,1,'2023-05-27'),(50,83,13,2,'2023-05-27'),(51,84,13,3,'2023-05-27'),(52,85,13,4,'2023-05-27'),(53,86,14,1,'2023-05-27'),(54,87,14,2,'2023-05-27'),(55,88,14,3,'2023-05-27'),(56,89,14,4,'2023-05-27'),(57,90,15,1,'2023-05-27'),(58,91,15,2,'2023-05-27'),(59,92,15,3,'2023-05-27'),(60,93,15,4,'2023-05-27'),(61,94,16,1,'2022-10-08'),(62,95,16,2,'2022-10-08'),(63,96,16,3,'2022-10-08'),(64,97,16,4,'2022-10-08'),(65,98,17,1,'2022-10-08'),(66,99,17,2,'2022-10-08'),(67,100,17,3,'2022-10-08'),(68,101,17,4,'2022-10-08'),(69,102,18,1,'2023-05-30'),(70,103,18,2,'2023-05-30'),(71,104,18,3,'2023-05-30'),(72,105,18,4,'2023-05-30'),(73,106,19,1,'2023-05-30'),(74,107,19,2,'2023-05-30'),(75,108,19,3,'2023-05-30'),(76,109,19,4,'2023-05-30'),(77,62,17,1,'2023-06-27'),(78,63,17,1,'2023-06-27'),(79,64,17,5,'2023-06-27'),(80,65,17,5,'2023-06-27'),(81,71,1,1,'2023-06-27');
+/*!40000 ALTER TABLE `participant_category` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2023-06-28 12:25:02
