@@ -1,8 +1,11 @@
 ﻿
+using System.ComponentModel.DataAnnotations;
+
 namespace JudoArena.Model.DB;
 
 public partial class Competition
 {
+    [Key]
     public int Id { get; set; }
 
     public string? Name { get; set; }

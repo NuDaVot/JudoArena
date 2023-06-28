@@ -10,5 +10,10 @@
         }
 
         public object Data { get; set; }
+        public string NameWin { get ; set; }
+        public Competition Competition { get; set; }
+        public object CurrentViewOld { get; set; } 
+        public Category Category { get; set; }
+        public List<Participant> Participants { get; set; }
     }
 }

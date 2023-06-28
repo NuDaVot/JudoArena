@@ -7,7 +7,19 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="View\AboutJudoArenaWin.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\AddParticipantCategoryPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\CompetitionsPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="View\HomePage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\ParticipantsFrame.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="View\SignInPage.xaml.cs">
@@ -16,12 +28,21 @@
     <Compile Update="View\SignUpPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="View\Window1.xaml.cs">
+    <Compile Update="View\AddСompetitionPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
     <Page Update="Utilit\DataTemplate.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\AboutJudoArenaWin.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\AddParticipantCategoryPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\CompetitionsPage.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="View\HomePage.xaml">
@@ -30,13 +51,16 @@
     <Page Update="View\MainWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="View\ParticipantsFrame.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="View\SignInPage.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="View\SignUpPage.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="View\Window1.xaml">
+    <Page Update="View\AddСompetitionPage.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

@@ -14,6 +14,9 @@
                 <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Primary/MaterialDesignColor.Blue.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Accent/MaterialDesignColor.Lime.xaml" />
             </ResourceDictionary.MergedDictionaries>
+
+            <FontFamily x:Key="PTFont">Bellota Regular</FontFamily>
+            
             <Style x:Key="Header"
                    TargetType="{x:Type TextBlock}">
                 <Setter Property="FontFamily"
@@ -27,7 +30,7 @@
             <Style x:Key="PlainText"
                    TargetType="{x:Type TextBlock}">
                 <Setter Property="FontFamily"
-                        Value="Bellota Regular"/>
+                        Value="{StaticResource PTFont}"/>
                 <Setter Property="FontSize"
                         Value="22"/>
             </Style>
@@ -36,7 +39,7 @@
                    TargetType="{x:Type TextBlock}"
                    BasedOn="{StaticResource MaterialDesignHelperTextBlock}">
                 <Setter Property="FontFamily"
-                        Value="Bellota Regular"/>
+                        Value="{StaticResource PTFont}"/>
                 <Setter Property="FontSize"
                         Value="16"/>
                 <Setter Property="Foreground"
@@ -49,7 +52,20 @@
                    TargetType="{x:Type TextBox}"
                    BasedOn="{StaticResource MaterialDesignTextBox}">
                 <Setter Property="FontFamily"
-                        Value="Bellota Regular"/>
+                        Value="{StaticResource PTFont}"/>
+                <Setter Property="FontSize"
+                        Value="22"/>
+                <Setter Property="BorderBrush"
+                        Value="Black"/>
+                <Setter Property="Margin"
+                        Value="0, -5, 0, 0"/>
+            </Style>
+
+            <Style x:Key="InPutHint"
+                   TargetType="{x:Type TextBox}"
+                   BasedOn="{StaticResource  MaterialDesignFloatingHintTextBox}">
+                <Setter Property="FontFamily"
+                        Value="{StaticResource PTFont}"/>
                 <Setter Property="FontSize"
                         Value="22"/>
                 <Setter Property="BorderBrush"
@@ -62,7 +78,7 @@
                    TargetType="{x:Type Button}"
                    BasedOn="{StaticResource MaterialDesignFlatButton}">
                 <Setter Property="FontFamily"
-                        Value="Bellota Regular"/>
+                        Value="{StaticResource PTFont}"/>
                 <Setter Property="FontSize"
                         Value="22"/>
                 <Setter Property="Foreground"
@@ -77,7 +93,7 @@
                    TargetType="{x:Type Button}"
                    BasedOn="{StaticResource MaterialDesignFlatButton}">
                 <Setter Property="FontFamily"
-                        Value="Bellota Regular"/>
+                        Value="{StaticResource PTFont}"/>
                 <Setter Property="FontSize"
                         Value="22"/>
                 <Setter Property="Foreground"
@@ -100,6 +116,22 @@
 
             <DataTemplate DataType="{x:Type vm:HomeVM}">
                 <view:HomePage/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type vm:AddСompetitionVM}">
+                <view:AddCompetitionPage/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type vm:CompetitionsVM}">
+                <view:CompetitionsPage/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type vm:ParticipantsVM}">
+                <view:ParticipantsFrame/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type vm:AddParticipantCategoryVM}">
+                <view:AddParticipantCategoryPage/>
             </DataTemplate>
         </ResourceDictionary>
 

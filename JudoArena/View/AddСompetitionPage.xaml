@@ -1,0 +1,348 @@
+﻿<Page x:Class="JudoArena.View.AddCompetitionPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:JudoArena.View"
+      xmlns:vm="clr-namespace:JudoArena.ViewModel"
+      xmlns:ut="clr-namespace:JudoArena.Utilit"
+      xmlns:MaterialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="1000">
+    
+    <Page.DataContext>
+        <vm:AddСompetitionVM/>
+    </Page.DataContext>
+    <Page.Resources>
+        <ut:FirstCharConverter x:Key="FirstCharConverter" />
+    </Page.Resources>
+    <Grid  d:Background="White">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <!--#region Заголов-->
+        
+        <StackPanel Orientation="Horizontal"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="4"
+                    Visibility="{Binding VisibilityPage}">
+            <TextBlock Text="{Binding NameWin}" 
+                   HorizontalAlignment="Center"
+                   Grid.Column="0"
+                   Grid.ColumnSpan="3"
+                   Style="{StaticResource Header}"
+                   Margin="0, 30, 20, 0"/>
+
+            <Button Command="{Binding GoHome}"
+                    Style="{StaticResource Сancel}"
+                    Margin="0, 30, 10, 0">Отмена</Button>
+
+            <StackPanel Orientation="Horizontal"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Grid.Column="3"
+                        Margin="0, 30, 10, 0">
+                <TextBlock HorizontalAlignment="Center"
+                           Text="{Binding User.Surname, StringFormat='{}{0} '}"
+                           Style="{StaticResource PlainText}"/>
+                <TextBlock HorizontalAlignment="Center"
+                           Text="{Binding User.Name, StringFormat='{}{0}.', Converter={StaticResource FirstCharConverter}}"
+                           Style="{StaticResource PlainText}"/>
+                <TextBlock HorizontalAlignment="Center"
+                           Text="{Binding User.Patronymic, StringFormat='{}{0}.', Converter={StaticResource FirstCharConverter}}"
+                           Style="{StaticResource PlainText}"/>
+            </StackPanel>
+
+        </StackPanel>
+        <!--#endregion -->
+
+        <!--#region Поля ввода-->
+        
+        <TextBox Grid.Column="0"
+                 Grid.Row="1"
+                 Text="{Binding NameСompetition, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                 Style="{StaticResource InPutHint}"
+                 Margin="30, 20, 30, 0"
+                 MaterialDesign:HintAssist.Hint="Название"
+                 IsReadOnly="{Binding IsReadOnly}">
+            
+        </TextBox>
+
+        <StackPanel Grid.Row="1"
+                    Grid.Column="1"
+                    Margin="30, 24, 30, 0">
+            <TextBlock Style="{StaticResource PlainText}"
+                       FontSize="16"
+                       Foreground="Gray">Дата cоревнования</TextBlock>
+            <DatePicker 
+                    SelectedDate="{Binding Date}" 
+                    DisplayDateStart="{Binding DateStart}"
+                    DisplayDateEnd="{Binding DateEnd}"
+                    FontSize="22"
+                    FontFamily="Bellota Regular"
+                IsEnabled="{Binding IsEnabled}"/>
+        </StackPanel>
+
+        <TextBox Grid.Column="2"
+                 Grid.Row="1"
+                 Text="{Binding Address, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                 Style="{StaticResource InPutHint}"
+                 Margin="30, 20, 30, 0"
+                 MaterialDesign:HintAssist.Hint="Адрес"
+                 IsReadOnly="{Binding IsReadOnly}">
+            
+
+        </TextBox>
+        <TextBox Grid.Column="3"
+                 Grid.Row="1"
+                 Text="{Binding Organizer, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                 Style="{StaticResource InPutHint}"
+                 Margin="30, 20, 30, 0"
+                 MaterialDesign:HintAssist.Hint="Организатор"
+                 Visibility="{Binding VisibilityOrganizer}"
+                 IsReadOnly="{Binding IsReadOnly}">
+
+
+        </TextBox>
+        <!--#endregion -->
+
+        <!--#region Весс-->
+        <Grid Grid.Row="2"
+              Grid.ColumnSpan="2"
+              ShowGridLines="False"
+              Margin="30, 40, 35, 0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Text="Начало весовой категории"
+                       Style="{StaticResource PlainText}"
+                       TextWrapping ="Wrap"
+                       HorizontalAlignment="Center"
+                       Grid.Column="0"
+                       Grid.Row="0"
+                       FontSize="16"    />
+            <TextBlock Text="Конец весовой категории"
+                   Style="{StaticResource PlainText}"
+                   TextWrapping ="Wrap"
+                   HorizontalAlignment="Center"
+                   Grid.Column="1"
+                   Grid.Row="0"
+                       FontSize="16"/>
+            <Border BorderBrush="#C31818"
+                    BorderThickness="0.5"
+                    Grid.Row="1"
+                    Grid.ColumnSpan="2"
+                    Margin="0 ,10, 0, 0"></Border>
+            <TextBox Grid.Column="0"
+                 Grid.Row="2"
+                 Text="{Binding WeightStartSTR, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                 Style="{StaticResource InPutHint}"
+                 Margin="0, 20, 60, 0"
+                 MaterialDesign:HintAssist.Hint="Значение с"
+                     Visibility="{Binding VisibilityPage}"/>
+            <TextBox Grid.Column="1"
+                 Grid.Row="2"
+                 Text="{Binding WeightEndSTR, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                 Style="{StaticResource InPutHint}"
+                 Margin="-30, 20, 60, 0"
+                 MaterialDesign:HintAssist.Hint="Значение до"
+                     Visibility="{Binding VisibilityPage}"/>
+
+            <Button Grid.Column="1"
+                Grid.Row="2"
+                HorizontalAlignment="Right"
+                VerticalAlignment="Bottom"
+                Width="50"
+                Height="50"
+                Panel.ZIndex="3"
+                Style="{StaticResource RegularButton}"
+                Background="White"
+                Command="{Binding AddWeight}"
+                    Visibility="{Binding VisibilityPage}">
+                <MaterialDesign:PackIcon Kind="PlusBoxMultiple" />
+
+            </Button>
+
+            <ScrollViewer Grid.Row="3"
+                      Grid.ColumnSpan="2"
+                      Panel.ZIndex="1"
+                      Margin="0, 20, 0,  0">
+                <ItemsControl ItemsSource="{Binding ObjectWeight}">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <Button Command="{Binding DataContext.DeleteWeight, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}"
+                                CommandParameter="{Binding}"
+                                HorizontalContentAlignment="Stretch"
+                                Style="{StaticResource Сancel}"
+                                Margin="0, 0, 0, 6"
+                                >
+
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock Text="{Binding WeightStart}" 
+                                           Grid.Column="0"
+                                           HorizontalAlignment="Center"/>
+                                    <TextBlock Text="{Binding WeightEnd}" 
+                                           Grid.Column="1"
+                                           HorizontalAlignment="Center"/>
+                                </Grid>
+                            </Button>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+            </ScrollViewer>
+
+        </Grid>
+        <!--#endregion -->
+
+        <!--#region Возраст-->
+        <Grid Grid.Row="2"
+              Grid.Column="2"
+              Grid.ColumnSpan="2"
+              ShowGridLines="False"
+              Margin="30, 40, 35, 0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Text="Начало возрастной категории"
+                       Style="{StaticResource PlainText}"
+                       TextWrapping ="Wrap"
+                       HorizontalAlignment="Center"
+                       Grid.Column="0"
+                       Grid.Row="0"
+                       FontSize="16"    />
+            <TextBlock Text="Конец возрастной категории"
+                   Style="{StaticResource PlainText}"
+                   TextWrapping ="Wrap"
+                   HorizontalAlignment="Center"
+                   Grid.Column="1"
+                   Grid.Row="0"
+                       FontSize="16"/>
+            <Border BorderBrush="#C31818"
+                    BorderThickness="0.5"
+                    Grid.Row="1"
+                    Grid.ColumnSpan="2"
+                    Margin="0 ,10, 0, 0"></Border>
+            <DatePicker Grid.Column="0"
+                 Grid.Row="2"
+                 Margin="0, 40, 60, 0"
+                 MaterialDesign:HintAssist.Hint="Значение с "
+                 FontSize="22"
+                 FontFamily="Bellota Regular"
+                 DisplayDateEnd="{Binding DateStart}"
+                 DisplayDateStart="{Binding DateBr}"
+                 SelectedDate="{Binding DateBRStart}"
+                        Visibility="{Binding VisibilityPage}"/>
+            <DatePicker Grid.Column="1"
+                 Grid.Row="2"
+                 Margin="-30, 40, 60, 0"
+                 MaterialDesign:HintAssist.Hint="Значение до"
+                 FontSize="22"
+                 FontFamily="Bellota Regular"
+                 DisplayDateEnd="{Binding DateStart}"
+                 DisplayDateStart="{Binding DateBr}"
+                 SelectedDate="{Binding DateBREnd}"
+                        Visibility="{Binding VisibilityPage}"/>
+
+            <Button Grid.Column="1"
+                Grid.Row="2"
+                HorizontalAlignment="Right"
+                VerticalAlignment="Bottom"
+                Width="50"
+                Height="50"
+                Panel.ZIndex="3"
+                Style="{StaticResource RegularButton}"
+                Background="White"
+                Command="{Binding AddAge}"
+                    Visibility="{Binding VisibilityPage}">
+                <MaterialDesign:PackIcon Kind="PlusBoxMultiple" />
+
+            </Button>
+
+            <ScrollViewer Grid.Row="3"
+                      Grid.ColumnSpan="2"
+                      Panel.ZIndex="1"
+                      Margin="0, 20, 0,  0">
+                <ItemsControl ItemsSource="{Binding ObjectAge}">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <Button Command="{Binding DataContext.DeleteAge, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}"
+                                CommandParameter="{Binding}"
+                                HorizontalContentAlignment="Stretch"
+                                Style="{StaticResource Сancel}"
+                                Margin="0, 0, 0, 6"
+                                >
+
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock Text="{Binding AgeStart, StringFormat='{} {0:dd/MM/yyyy} г.'}" 
+                                           Grid.Column="0"
+                                           HorizontalAlignment="Center"/>
+                                    <TextBlock Text="{Binding AgeEnd, StringFormat='{} {0:dd/MM/yyyy} г.'}" 
+                                           Grid.Column="1"
+                                           HorizontalAlignment="Center"/>
+                                </Grid>
+                            </Button>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+            </ScrollViewer>
+
+        </Grid>
+        <!--#endregion -->
+
+        <Button Command="{Binding AddC}"
+                Style="{StaticResource RegularButton}"
+                Grid.Column="3"
+                Grid.Row="2"
+                HorizontalAlignment="Stretch"
+                VerticalAlignment="Bottom"
+                Panel.ZIndex="4"
+                Margin="20, 0, 20, 40"
+                Background="White"
+                Visibility="{Binding VisibilityPage}">Создать</Button>
+
+        <TextBlock Grid.Column="3"
+                   Grid.Row="2"
+                   HorizontalAlignment="Stretch"
+                   VerticalAlignment="Bottom"
+                   Margin="20, 0, 20, 10"
+                   Panel.ZIndex="4"
+                   Style="{StaticResource Error}"
+                   Text="{Binding Error, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                   Visibility="{Binding VisibilityPage}"></TextBlock>
+
+    </Grid>
+</Page>

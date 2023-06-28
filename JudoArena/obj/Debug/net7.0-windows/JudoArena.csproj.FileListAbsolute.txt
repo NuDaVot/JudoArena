@@ -94,5 +94,15 @@ C:\Users\nudan\Source\Repos\NuDaVot\JudoArena\JudoArena\bin\Debug\net7.0-windows
 C:\Users\nudan\Source\Repos\NuDaVot\JudoArena\JudoArena\bin\Debug\net7.0-windows\Prism.Wpf.dll
 C:\Users\nudan\Source\Repos\NuDaVot\JudoArena\JudoArena\bin\Debug\net7.0-windows\MaterialDesignColors.dll
 C:\Users\nudan\Source\Repos\NuDaVot\JudoArena\JudoArena\bin\Debug\net7.0-windows\MaterialDesignThemes.Wpf.dll
-C:\Users\nudan\Source\Repos\NuDaVot\JudoArena\JudoArena\obj\Debug\net7.0-windows\View\Window1.g.cs
-C:\Users\nudan\Source\Repos\NuDaVot\JudoArena\JudoArena\obj\Debug\net7.0-windows\View\Window1.baml
+C:\Users\nudan\Source\Repos\NuDaVot\JudoArena\JudoArena\obj\Debug\net7.0-windows\View\AddСompetitionPage.g.cs
+C:\Users\nudan\Source\Repos\NuDaVot\JudoArena\JudoArena\obj\Debug\net7.0-windows\View\AddСompetitionPage.baml
+C:\Users\nudan\source\repos\NuDaVot\JudoArena\JudoArena\obj\Debug\net7.0-windows\View\CompetitionsPage.g.cs
+C:\Users\nudan\source\repos\NuDaVot\JudoArena\JudoArena\obj\Debug\net7.0-windows\View\CompetitionsPage.baml
+C:\Users\nudan\Source\Repos\NuDaVot\JudoArena\JudoArena\obj\Debug\net7.0-windows\View\AboutJudoArenaWin.g.cs
+C:\Users\nudan\Source\Repos\NuDaVot\JudoArena\JudoArena\obj\Debug\net7.0-windows\View\AboutJudoArenaWin.baml
+C:\Users\nudan\Source\Repos\NuDaVot\JudoArena\JudoArena\obj\Debug\net7.0-windows\View\ParticipantsFrame.g.cs
+C:\Users\nudan\Source\Repos\NuDaVot\JudoArena\JudoArena\obj\Debug\net7.0-windows\View\ParticipantsFrame.baml
+C:\Users\nudan\Source\Repos\NuDaVot\JudoArena\JudoArena\obj\Debug\net7.0-windows\View\AddParticipantCategoryPage.g.cs
+C:\Users\nudan\Source\Repos\NuDaVot\JudoArena\JudoArena\obj\Debug\net7.0-windows\View\AddParticipantCategoryPage.baml
+C:\Users\nudan\Source\Repos\NuDaVot\JudoArena\JudoArena\obj\Debug\net7.0-windows\Interop.Microsoft.Office.Interop.Word.dll
+C:\Users\nudan\Source\Repos\NuDaVot\JudoArena\JudoArena\obj\Debug\net7.0-windows\JudoArena.csproj.ResolveComReference.cache

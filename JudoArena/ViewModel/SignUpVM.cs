@@ -104,7 +104,7 @@ namespace JudoArena.ViewModel
             }
             if (!IsCheckedPassword(TrainerPassword, 10))
             {
-                TrainerError = $"Пароль должен состоять из 10 символов,\nиз букв и цыфр";
+                TrainerError = $"Пароль должен состоять из 10 символов,\nиз букв и цифр";
                 return;
             }
             if (!TrainerPassword.Equals(TrainerRepeat))
@@ -195,7 +195,7 @@ namespace JudoArena.ViewModel
         private string _participanError = "Что-то пусто";
         public string ParticipantError
         {
-            set { _participanError = value; RaisePropertiesChanged("ParticipanVisibilityError"); RaisePropertiesChanged("ParticipantError"); }
+            set { _participanError = value; RaisePropertiesChanged("VisibilityError"); RaisePropertiesChanged("ParticipantError"); }
             get { return _participanError; }
         }
         public Visibility ParticipanVisibilityError

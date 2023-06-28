@@ -3,7 +3,7 @@ namespace JudoArena.Model
 {
     class ControlUser
     {
-        private readonly JudoContext _context = new JudoContext();
+        private readonly JudoContext _context = new ();
         public async Task<Login> GetUserByLogin(string login)
         {
             return _context.Logins.SingleAsync(p => p.Login1 == login).Result;
@@ -18,7 +18,7 @@ namespace JudoArena.Model
         }
         public async Task<Trainer> GetTrainer(int IDLogin)
         {
-            return _context.Trainers.SingleAsync(p => p.LoginTrainer == IDLogin).Result;
+            return _context.Trainers.SingleAsync(p => p.LoginTrainer == IDLogin).Result; 
         }
         public Login IsCheckedLogin(string login)
         {
@@ -45,7 +45,8 @@ namespace JudoArena.Model
             _context.SaveChanges();
             return trainer;
         }
-        public Participant AddParticipant(string Surname, string Name, string Patronymic, decimal Weight, DateOnly DateBirth, string HealthInsuranceNumber, string login, string Password)
+        public Participant AddParticipant(string Surname, string Name, string Patronymic, decimal Weight, 
+            DateOnly DateBirth, string HealthInsuranceNumber, string login, string Password)
         {
             _context.Logins.Add(new Login
             {

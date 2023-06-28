@@ -15,11 +15,30 @@
         <vm:MainWindowVM/>
     </Window.DataContext>
 
-    <Frame x:Name="MainFrame"
+    <Grid>
+        <Button
+            Panel.ZIndex="3"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Top"
+            Margin="10"
+            Width="20"
+            Height="20"
+            FontSize="10"
+            Style="{StaticResource RegularButton}"
+            Padding="0"
+            Command="{Binding GoAboute}">i
+
+        </Button>
+        <Frame x:Name="MainFrame"
            NavigationUIVisibility="Hidden"
+           Panel.ZIndex="2"
            Content="{Binding CurrentView}"
            >
-    </Frame>
+        </Frame>
+
+    </Grid>
+
+    
 
   
 </Window>

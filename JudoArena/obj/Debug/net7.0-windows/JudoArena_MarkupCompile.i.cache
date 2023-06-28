@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET7_0;NETCOREAPP
 C:\Users\nudan\Source\Repos\NuDaVot\JudoArena\JudoArena\App.xaml
-6-1685675731
+10-29664608
 
-301810465218
-2191151459394
-Utilit\DataTemplate.xaml;View\HomePage.xaml;View\MainWindow.xaml;View\SignInPage.xaml;View\SignUpPage.xaml;View\Window1.xaml;
+39589128838
+2201025049031
+Utilit\DataTemplate.xaml;View\AboutJudoArenaWin.xaml;View\AddParticipantCategoryPage.xaml;View\AddСompetitionPage.xaml;View\CompetitionsPage.xaml;View\HomePage.xaml;View\MainWindow.xaml;View\ParticipantsFrame.xaml;View\SignInPage.xaml;View\SignUpPage.xaml;
 
 True
 

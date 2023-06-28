@@ -40,16 +40,17 @@
 
             <TextBox Grid.Column="0"
                      Text="{Binding Search, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                     Style="{StaticResource InPut}"
+                     Style="{StaticResource InPutHint}"
                      Margin="20, 30, 20, 0"
-                     MaterialDesign:HintAssist.Hint="Поиск"/>
+                     MaterialDesign:HintAssist.Hint="Поиск"
+                     MaterialDesign:TextFieldAssist.HasClearButton="True"/>
 
-            <Button Command="{Binding Sorting}"
+            <!--<Button Command="{Binding Sorting}"
                     Style="{StaticResource RegularButton}"
                     Grid.Column="1"
                     Margin="0, 30, 0, 0">
                 <MaterialDesign:PackIcon Kind="Sort" />
-            </Button>
+            </Button>-->
         </Grid>
 
         <TextBlock Text="Список соревнований" 
@@ -106,10 +107,29 @@
                            Style="{StaticResource PlainText}"
                            HorizontalAlignment="Center"/>
 
-            <TextBlock Text="Дата"
-                           Grid.Column="1"
-                           Style="{StaticResource PlainText}"
-                           HorizontalAlignment="Center"/>
+            <Grid Grid.Column="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="8*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+                <ComboBox MaterialDesign:HintAssist.Hint="Дата"
+                            FontFamily="Bellota Regular"
+                            FontSize="23"
+                            Margin="30, -7, 10, 0"
+                           HorizontalAlignment="Stretch"
+                          Text="{Binding SelectedSort}">
+                    <ComboBoxItem>Все</ComboBoxItem>
+                    <ComboBoxItem>Завершенные</ComboBoxItem>
+                    <ComboBoxItem>Запланированные</ComboBoxItem>
+                </ComboBox>
+                <Button Command="{Binding Sorting}"
+                    Style="{StaticResource RegularButton}"
+                    Grid.Column="1"
+                    Margin="0, 0, 0, 0">
+                    <MaterialDesign:PackIcon Kind="Sort" />
+                </Button>
+            </Grid>
+            
 
             <TextBlock Text="Адрес"
                            Grid.Column="2"
@@ -139,7 +159,7 @@
                 Style="{StaticResource RegularButton}"
                 Background="White"
                 Visibility="{Binding Visibility}"
-                >
+                Command="{Binding AddCompetition}">
             <MaterialDesign:PackIcon Kind="PlusBoxMultiple" />
 
         </Button>
@@ -158,6 +178,7 @@
                                 HorizontalContentAlignment="Stretch"
                                 Style="{StaticResource Сancel}"
                                 Margin="0, 0, 0, 6"
+                                Height="60"
                                 >
 
                             <Grid>
@@ -171,11 +192,12 @@
                                            FontWeight="Bold" 
                                            Grid.Column="0"
                                            HorizontalAlignment="Center"/>
-                                <TextBlock Text="{Binding Date}" 
+                                <TextBlock Text="{Binding Date, StringFormat='{} {0:dd/MM/yyyy} г.'}" 
                                            Grid.Column="1"
                                            HorizontalAlignment="Center"/>
                                 <TextBlock Text="{Binding Address}" 
                                            Grid.Column="2"
+                                           TextWrapping="Wrap"
                                            HorizontalAlignment="Center"/>
                                 <StackPanel Orientation="Horizontal"
                                             HorizontalAlignment="Center"
