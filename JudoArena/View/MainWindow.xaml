@@ -16,7 +16,7 @@
     </Window.DataContext>
 
     <Grid>
-        <Button
+        <!--<Button
             Panel.ZIndex="3"
             HorizontalAlignment="Right"
             VerticalAlignment="Top"
@@ -28,7 +28,7 @@
             Padding="0"
             Command="{Binding GoAboute}">i
 
-        </Button>
+        </Button>-->
         <Frame x:Name="MainFrame"
            NavigationUIVisibility="Hidden"
            Panel.ZIndex="2"

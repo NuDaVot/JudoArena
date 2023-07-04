@@ -1,15 +1,15 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\nudan\\Source\\Repos\\NuDaVot\\JudoArena\\JudoArena\\JudoArena.csproj": {}
+    "C:\\Users\\nudan\\source\\repos\\NuDaVot\\JudoArena\\JudoArena\\JudoArena.csproj": {}
   },
   "projects": {
-    "C:\\Users\\nudan\\Source\\Repos\\NuDaVot\\JudoArena\\JudoArena\\JudoArena.csproj": {
+    "C:\\Users\\nudan\\source\\repos\\NuDaVot\\JudoArena\\JudoArena\\JudoArena.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\nudan\\Source\\Repos\\NuDaVot\\JudoArena\\JudoArena\\JudoArena.csproj",
+        "projectUniqueName": "C:\\Users\\nudan\\source\\repos\\NuDaVot\\JudoArena\\JudoArena\\JudoArena.csproj",
         "projectName": "JudoArena",
-        "projectPath": "C:\\Users\\nudan\\Source\\Repos\\NuDaVot\\JudoArena\\JudoArena\\JudoArena.csproj",
+        "projectPath": "C:\\Users\\nudan\\source\\repos\\NuDaVot\\JudoArena\\JudoArena\\JudoArena.csproj",
         "packagesPath": "C:\\Users\\nudan\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\nudan\\Source\\Repos\\NuDaVot\\JudoArena\\JudoArena\\obj\\",
         "projectStyle": "PackageReference",

@@ -119,6 +119,7 @@ namespace JudoArena.ViewModel
                 UserInterface User = controlUser.AddTrainer(TrainerSurname, TrainerName, TrainerPatronymic, 
                                                         TrainerLicense, TrainerLogin, TrainerPassword);
                 _navigation.Data = new object[] { User, 1 };
+                MessageBox.Show("Успешно зарегистрировались");
                 _navigation.CurrentView = new HomeVM();
                 TrainerError = "";
             }
@@ -262,6 +263,7 @@ namespace JudoArena.ViewModel
                                                            result, data, ParticipantHealth, ParticipantLogin, ParticipantPassword);
 
                 _navigation.Data = new object[] { User, 0 };
+                MessageBox.Show("Успешно зарегистрировались");
                 _navigation.CurrentView = new HomeVM();
                 
             }

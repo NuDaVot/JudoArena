@@ -2,9 +2,10 @@
   "ExpandedNodes": [
     "",
     "\\JudoArena",
+    "\\JudoArena\\Model",
     "\\JudoArena\\View",
     "\\JudoArena\\ViewModel"
   ],
-  "SelectedNode": "\\JudoArena.sln",
+  "SelectedNode": "\\JudoArena\\View\\HomePage.xaml",
   "PreviewInSolutionExplorer": false
 }

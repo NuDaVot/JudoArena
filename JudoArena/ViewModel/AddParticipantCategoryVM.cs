@@ -81,13 +81,16 @@ namespace JudoArena.ViewModel
         {
             _navigation.CurrentView = _navigation.CurrentViewOld;
         });
+        public string CategoriyT { get ; set; }
         public AddParticipantCategoryVM() 
         {
+
             _navigation = MainWindowVM.Navigation;
             User = ((UserInterface)((object[])_navigation.Data)[0]);
             _objectList = new ObservableCollection<Participant>(_navigation.Participants);
             _addList = new ObservableCollection<Participant>();
             ObjectList = _objectList;
+            CategoriyT = string.Format("до {0} {1}-{2}", _navigation.Category.IdWeightNavigation.WeightEnd, _navigation.Category.IdAgeNavigation.AgeStart.Value.Year, _navigation.Category.IdAgeNavigation.AgeEnd.Value.Year);
         }
     }
 }

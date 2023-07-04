@@ -53,7 +53,7 @@
             </Button>
         </Grid>
 
-        <TextBlock Text="Список участников" 
+        <TextBlock Text="{Binding CategoriyT, StringFormat='{}Список спортсменов - {0}'}" 
                    HorizontalAlignment="Center"
                    Grid.Column="0"
                    Grid.ColumnSpan="3"

@@ -62,6 +62,7 @@ namespace JudoArena.ViewModel
                 _selectedSort = value;
                 DateTime currentDate = DateTime.Now.Date;
                 DateOnly dateOnly = new DateOnly(currentDate.Year, currentDate.Month, currentDate.Day);
+                ObjectList = _competition.GetCompetitionList();
                 switch (_selectedSort)
                 {
                     case "Все":

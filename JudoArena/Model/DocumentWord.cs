@@ -40,7 +40,7 @@ namespace JudoArena.Model
 
             // Добавление заголовка
             Word.Paragraph titlePara = oDoc.Paragraphs.Add();
-            titlePara.Range.Text = $"Соревнование {competition.Name}";
+            titlePara.Range.Text = $"Соревнование {competition.Name} №{competition.Id}";
             titlePara.Range.Font.Size = 14;
             titlePara.Alignment = Word.WdParagraphAlignment.wdAlignParagraphCenter;
             titlePara.Range.InsertParagraphAfter();
